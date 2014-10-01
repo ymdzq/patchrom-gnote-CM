@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="timer_minute_clock_padding_left">50dip</dimen>
+    <dimen name="timer_hour_clock_padding_left">92.5dip</dimen>
+    <dimen name="timer_second_clock_padding_left">238.5dip</dimen>
+</resources>

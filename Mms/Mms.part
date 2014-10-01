@@ -1,0 +1,23 @@
+From cff4e11d9a27ced3d60608e8a3e5d52d9539a81e Mon Sep 17 00:00:00 2001
+From: ymdzq <233900743@qq.com>
+Date: Fri, 9 Aug 2013 16:38:53 +0800
+Subject: [PATCH] fix the problem Pre-written Messages Update failed
+
+---
+ Mms/smali/com/android/mms/data/FestivalUpdater.smali | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/Mms/smali/com/android/mms/data/FestivalUpdater.smali
++++ b/Mms/smali/com/android/mms/data/FestivalUpdater.smali
+@@ -1289,7 +1289,7 @@
+     return-void
+ 
+     :cond_0
+-    const-string v7, "http://api.comm.miui.com/miuisms/res/categories?width=%s"
++    const-string v7, "http://api.comm.miui.com/miuisms/res/categories?width=720"
+ 
+     const/4 v8, 0x1
+ 
+-- 
+1.8.1.2
+

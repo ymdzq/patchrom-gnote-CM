@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.OriginalSettings">
+    <PreferenceCategory android:title="@string/notification_light_general_title" android:key="general_section">
+        <CheckBoxPreference android:title="@string/notification_pulse_title" android:key="pulse_enabled" />
+        <com.android.OriginalSettings.notificationlight.ApplicationLightPreference android:persistent="false" android:title="@string/notification_light_default_value" android:key="default" />
+        <CheckBoxPreference android:title="@string/notification_light_use_custom" android:key="custom_enabled" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/notification_light_phonelist_title" android:key="phone_list">
+        <com.android.OriginalSettings.notificationlight.ApplicationLightPreference android:persistent="false" android:title="@string/notification_light_missed_call_title" android:key="missed_call" />
+        <com.android.OriginalSettings.notificationlight.ApplicationLightPreference android:persistent="false" android:title="@string/notification_light_voicemail_title" android:key="voicemail" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/notification_light_applist_title" android:key="applications_list" />
+</PreferenceScreen>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="show_dev_countdown">
+        <item quantity="other">Sasa uko katika hatua ya %1$d kutoka kuwa msanidi programu.</item>
+        <item quantity="one">Sasa uko katika hatua ya %1$d kutoka kuwa msanidi programu.</item>
+    </plurals>
+</resources>

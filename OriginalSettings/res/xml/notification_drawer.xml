@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/notification_drawer_behaviour_title">
+        <ListPreference android:entries="@array/notification_drawer_collapse_on_dismiss_entries" android:title="@string/notification_drawer_collapse_on_dismiss_title" android:key="notification_drawer_collapse_on_dismiss" android:dialogTitle="@string/notification_drawer_collapse_on_dismiss_title" android:entryValues="@array/notification_drawer_collapse_on_dismiss_values" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/power_widget_title">
+        <CheckBoxPreference android:title="@string/title_expanded_widget" android:key="expanded_widget" android:defaultValue="false" />
+        <PreferenceScreen android:title="@string/title_widget_picker" android:key="widget_picker" android:summary="@string/summary_widget_picker" android:dependency="expanded_widget" android:fragment="com.android.OriginalSettings.cyanogenmod.NotificationDrawer$PowerWidgetChooser" />
+        <PreferenceScreen android:title="@string/title_widget_order" android:key="widget_order" android:summary="@string/summary_widget_order" android:dependency="expanded_widget" android:fragment="com.android.OriginalSettings.cyanogenmod.NotificationDrawer$PowerWidgetOrder" />
+        <CheckBoxPreference android:title="@string/title_expanded_hide_onchange" android:key="expanded_hide_onchange" android:dependency="expanded_widget" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/title_expanded_hide_scrollbar" android:key="expanded_hide_scrollbar" android:dependency="expanded_widget" android:defaultValue="false" />
+        <ListPreference android:entries="@array/haptic_feedback_entries" android:title="@string/expanded_haptic_feedback_title" android:key="expanded_haptic_feedback" android:dependency="expanded_widget" android:dialogTitle="@string/expanded_haptic_feedback_title" android:entryValues="@array/haptic_feedback_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

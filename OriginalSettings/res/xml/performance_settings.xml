@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/performance_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.OriginalSettings">
+    <PreferenceScreen android:title="@string/processor_title" android:key="processor" android:summary="@string/processor_summary" android:fragment="com.android.OriginalSettings.cyanogenmod.Processor" />
+    <PreferenceScreen android:title="@string/io_scheds_title" android:key="ioscheduler" android:summary="@string/io_scheds_summary" android:fragment="com.android.OriginalSettings.cyanogenmod.IOScheduler" />
+    <PreferenceScreen android:title="@string/memory_management_title" android:key="memory_management" android:summary="@string/memory_management_summary" android:fragment="com.android.OriginalSettings.cyanogenmod.MemoryManagement" />
+    <CheckBoxPreference android:title="@string/pref_use_16bpp_alpha_title" android:key="pref_use_16bpp_alpha" android:summary="@string/pref_use_16bpp_alpha_summary" />
+    <ListPreference android:persistent="false" android:entries="@array/dithering_entries" android:title="@string/pref_use_dithering_title" android:key="pref_use_dithering" android:dialogTitle="@string/pref_use_dithering_title" android:entryValues="@array/dithering_values" />
+</PreferenceScreen>

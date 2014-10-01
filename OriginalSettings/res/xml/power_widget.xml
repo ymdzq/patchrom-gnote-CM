@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/title_buttons" android:key="pref_buttons" />
+    <PreferenceCategory android:title="@string/title_button_modes" android:key="pref_buttons_modes">
+        <MultiSelectListPreference android:persistent="false" android:entries="@array/entries_brightness_widget" android:title="@string/pref_brightness_mode_title" android:key="pref_brightness_mode" android:summary="@string/pref_brightness_mode_summary" android:dialogTitle="@string/pref_brightness_mode_title" android:entryValues="@array/values_brightness_widget" />
+        <ListPreference android:entries="@array/entries_network_widget" android:title="@string/pref_network_mode_title" android:key="pref_network_mode" android:dialogTitle="@string/pref_network_mode_title" android:entryValues="@array/values_network_widget" />
+        <ListPreference android:entries="@array/entries_screentimeout_widget" android:title="@string/pref_screentimeout_mode_title" android:key="pref_screentimeout_mode" android:dialogTitle="@string/pref_screentimeout_mode_title" android:entryValues="@array/values_screentimeout_widget" />
+        <MultiSelectListPreference android:persistent="false" android:entries="@array/entries_ring_widget" android:title="@string/pref_ring_mode_title" android:key="pref_ring_mode" android:summary="@string/pref_ring_mode_summary" android:dialogTitle="@string/pref_ring_mode_title" android:entryValues="@array/values_ring_widget" />
+        <ListPreference android:entries="@array/entries_flash_widget" android:title="@string/pref_flash_mode_title" android:key="pref_flash_mode" android:dialogTitle="@string/pref_flash_mode_title" android:entryValues="@array/values_flash_widget" />
+    </PreferenceCategory>
+</PreferenceScreen>

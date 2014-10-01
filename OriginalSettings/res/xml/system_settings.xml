@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/system_interface_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.OriginalSettings">
+    <PreferenceScreen android:title="@string/status_bar_title" android:key="status_bar" android:fragment="com.android.OriginalSettings.cyanogenmod.StatusBar" />
+    <PreferenceScreen android:title="@string/quick_settings_panel_title" android:key="quick_settings_panel" android:fragment="com.android.OriginalSettings.cyanogenmod.QuickSettings" />
+    <PreferenceScreen android:title="@string/notification_drawer_title" android:key="notification_drawer" android:fragment="com.android.OriginalSettings.cyanogenmod.NotificationDrawer" />
+    <ListPreference android:persistent="false" android:entries="@array/expanded_desktop_entries" android:title="@string/power_menu_expanded_desktop" android:key="expanded_desktop" android:entryValues="@array/expanded_desktop_values" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/power_menu_expanded_desktop" android:key="expanded_desktop_no_navbar" />
+    <PreferenceScreen android:title="@string/power_menu_title" android:key="power_menu" android:fragment="com.android.OriginalSettings.cyanogenmod.PowerMenu" />
+    <PreferenceScreen android:title="@string/lock_clock_title" android:key="lock_clock" android:summary="@string/lock_clock_summary">
+        <intent android:targetPackage="com.cyanogenmod.lockclock" android:action="android.intent.action.MAIN" android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/notification_pulse_title" android:key="notification_pulse" android:fragment="com.android.OriginalSettings.notificationlight.NotificationLightSettings" />
+    <PreferenceScreen android:title="@string/battery_light_title" android:key="battery_light" android:fragment="com.android.OriginalSettings.notificationlight.BatteryLightSettings" />
+    <PreferenceScreen android:title="@string/hardware_keys_title" android:key="hardware_keys" android:fragment="com.android.OriginalSettings.cyanogenmod.HardwareKeys" />
+    <PreferenceCategory android:title="@string/navigation_bar_category" android:key="navigation_bar_category">
+        <PreferenceScreen android:title="@string/navigation_bar_title" android:key="navigation_bar" android:fragment="com.android.OriginalSettings.cyanogenmod.NavBar" />
+        <PreferenceScreen android:title="@string/navigation_ring_title" android:key="navigation_ring" android:fragment="com.android.OriginalSettings.cyanogenmod.NavRing" />
+        <PreferenceScreen android:title="@string/pie_control_title" android:key="pie_control" android:fragment="com.android.OriginalSettings.cyanogenmod.PieControl" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/power_menu_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.OriginalSettings">
+    <CheckBoxPreference android:title="@string/power_menu_reboot_title" android:key="power_menu_reboot" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_screenshot_title" android:key="power_menu_screenshot" android:defaultValue="false" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/power_menu_expanded_desktop" android:key="power_menu_expanded_desktop" />
+    <CheckBoxPreference android:title="@string/power_menu_profiles_title" android:key="power_menu_profiles" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_airplane_title" android:key="power_menu_airplane" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_user_title" android:key="power_menu_user" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/power_menu_sound_title" android:key="power_menu_sound" android:defaultValue="true" />
+</PreferenceScreen>

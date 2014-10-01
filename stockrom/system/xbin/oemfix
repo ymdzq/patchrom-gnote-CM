@@ -1,0 +1,8 @@
+#!/system/bin/sh
+mkdir -p /data/system
+chgrp system /data/system
+chown system /data/system
+mkdir -p /cache/dalvik-cache
+chgrp system /cache/dalvik-cache
+chown system /cache/dalvik-cache
+chmod 771 /cache/dalvik-cache

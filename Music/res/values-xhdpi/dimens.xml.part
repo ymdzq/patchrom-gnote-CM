@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="volume_seek_bar_margin">19.0dip</dimen>
+    <dimen name="first_equalizer_seek_bar_margin">52.0dip</dimen>
+    <dimen name="equalizer_seek_bar_margin">17dip</dimen>
+    <dimen name="mainpage_video_width">495dip</dimen>
+    <dimen name="mainpage_video_height">441.0dip</dimen>
+    <dimen name="movable_action_bar_scroll_range">219.0dip</dimen>
+    <dimen name="mainpage_album_init_translation_x">-45.5dp</dimen>
+    <dimen name="mainpage_album_base_translation_x">15.17dp</dimen>
+    <dimen name="mainpage_tab_indicator_width">700.0dip</dimen>
+</resources>
