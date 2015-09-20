@@ -2983,11 +2983,13 @@
 
     move-result-object v8
 
-    .line 779
     .local v8, "r":Landroid/content/res/Resources;
+    iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-static {v8, v0}, Landroid/miui/ResourcesManager;->initMiuiResource(Landroid/content/res/Resources;Ljava/lang/String;)V
+
     if-nez v8, :cond_0
 
-    .line 782
     new-instance v0, Landroid/content/pm/PackageManager$NameNotFoundException;
 
     new-instance v1, Ljava/lang/StringBuilder;
