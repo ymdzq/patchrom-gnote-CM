@@ -15,7 +15,6 @@ def RemoveDeviceAssert(info):
     #if "format(" in edify.script[i] and "mmcblk0p16" in edify.script[i]:
       #edify.script[i] = 'format("ext4", "EMMC", "/dev/block/mmcblk0p16", "0", "/system");'
       #return
-#
 
 def WritePolicyConfig(info):
   try:

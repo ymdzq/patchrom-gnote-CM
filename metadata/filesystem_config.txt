@@ -240,7 +240,6 @@ system/bin/toolbox 0 2000 755
 system/bin/top 0 2000 755
 system/bin/touch 0 2000 755
 system/bin/tune2fs 0 2000 755
-system/bin/tunman 0 2000 755
 system/bin/uiautomator 0 2000 755
 system/bin/umount 0 2000 755
 system/bin/uncrypt 0 0 750
@@ -1707,6 +1706,7 @@ system/xbin/traceroute 0 2000 755
 system/xbin/true 0 2000 755
 system/xbin/ttysize 0 2000 755
 system/xbin/tune2fs 0 2000 755
+system/xbin/tunman 0 2000 755
 system/xbin/umount 0 2000 755
 system/xbin/uname 0 2000 755
 system/xbin/uncompress 0 2000 755

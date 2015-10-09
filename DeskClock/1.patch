@@ -29,7 +29,7 @@ Subject: [PATCH] fix Deskclock display string error
 -    const v5, 0x10403eb
 +    sget v5, Lcom/android/internal/R$string;->delete:I
  
-     new-instance v6, Lcom/android/deskclock/TimerFragment$7;
+     new-instance v6, Lcom/android/deskclock/TimerFragment$5;
  
 --- a/DeskClock/smali/com/android/deskclock/WorldClockFragment.smali
 +++ b/DeskClock/smali/com/android/deskclock/WorldClockFragment.smali
