@@ -263,7 +263,6 @@
 
     if-nez v4, :cond_2
 
-    .line 1960
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lcom/android/server/NotificationManagerService$7;->val$isSystemNotification:Z
@@ -281,10 +280,8 @@
     if-eqz v4, :cond_2
 
     :cond_miui
-    .line 1961
     const/16 v9, -0x3e8
 
-    .line 1962
     const-string v4, "NotificationService"
 
     new-instance v5, Ljava/lang/StringBuilder;

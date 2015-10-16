@@ -17,8 +17,8 @@ ro.product.name=GT-N7000
 ro.product.board=smdk4210
 ro.product.cpu.abi=armeabi-v7a
 ro.product.cpu.abi2=armeabi
-ro.product.locale.language=en
-ro.product.locale.region=US
+ro.product.locale.language=zh
+ro.product.locale.region=CN
 ro.wifi.channels=
 ro.board.platform=exynos4
 # ro.build.product is obsolete; use ro.product.device

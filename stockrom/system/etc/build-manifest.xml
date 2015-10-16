@@ -10,7 +10,7 @@
   <project name="CyanogenMod/AndroidAsync" path="external/koush/AndroidAsync" revision="addbc79bdab181f0e045d996f25cbb7dd0814c81" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/Superuser" path="external/koush/Superuser" revision="c2674e48914bbd387fdf119be8479f1bb9c166df" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/Widgets" path="external/koush/Widgets" revision="6aebba738f778bf265f0badbe649f590e46e27fd" upstream="refs/heads/cm-11.0"/>
-  <project name="CyanogenMod/android" path="android" revision="c61c4e49c043b4da15e122a580b17a96f760c2a9" upstream="refs/heads/cm-11.0"/>
+  <project name="CyanogenMod/android" path="android" revision="311a74da7cebb9b70ff864a2d0eebabd37117a13" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_abi_cpp" path="abi/cpp" revision="920825e414b1ff3031f42c745b405fec49e0e20c" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_art" path="art" revision="6ae6d126ba3b50d16b6ba61f39c3982a34a49eec" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_bionic" path="bionic" revision="a989f043cfb15e8d9200488f8943ab0a5084c02b" upstream="refs/heads/cm-11.0"/>
@@ -231,7 +231,7 @@
   <project groups="pdk" name="CyanogenMod/android_external_zlib" path="external/zlib" revision="976269481dd7f8652248774052221709e873b910" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_external_zxing" path="external/zxing" revision="7620644768ffc235607b3a94671e49518c18686f" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_frameworks_av" path="frameworks/av" revision="8fd5331eccc3b18a228e02a044a1863374d25044" upstream="refs/heads/cm-11.0"/>
-  <project name="CyanogenMod/android_frameworks_base" path="frameworks/base" revision="b4eb821e5365861b3cf476c36eb383ede919a163" upstream="refs/heads/cm-11.0"/>
+  <project name="CyanogenMod/android_frameworks_base" path="frameworks/base" revision="9649fbcdf6eb5b92cf8f01f54d79e1f02998fd2a" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_frameworks_compile_libbcc" path="frameworks/compile/libbcc" revision="3446cf552e7134dbe5d89924e7b38da2406d1490" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_frameworks_compile_mclinker" path="frameworks/compile/mclinker" revision="83d75752905781c3076de8b6aa94496d9d206ae9" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_frameworks_compile_slang" path="frameworks/compile/slang" revision="f1dfe7b6b28d7624d950e426affdb2ec833bd768" upstream="refs/heads/cm-11.0"/>
@@ -375,11 +375,10 @@
   <project groups="qcom" name="CyanogenMod/android_system_qcom" path="system/qcom" revision="c54aba94227845985451cc8f643b704a8de52102" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_system_security" path="system/security" revision="b5992b09a6f55d16f148fd6b405b6e8a8b0dc06b" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="CyanogenMod/android_system_vold" path="system/vold" revision="68368dcf02219aae7d26600e8c060c05c7fdfdc1" upstream="refs/heads/cm-11.0"/>
-  <project name="CyanogenMod/android_vendor_cm" path="vendor/cm" revision="4dd80f00bb72ca5f87806a527d38f26b292602bf" upstream="refs/heads/cm-11.0">
+  <project name="CyanogenMod/android_vendor_cm" path="vendor/cm" revision="4eea6431a0855d0be38cd27102abf534e6dd2ecf" upstream="refs/heads/cm-11.0">
     <copyfile dest="kernel/Android.mk" src="bootimage/Android.mk"/>
   </project>
   <project name="CyanogenMod/ion" path="external/koush/ion" revision="18229d4e9d9560e14158f2c55c17a490f87099e2" upstream="refs/heads/cm-11.0"/>
-  <project name="cyngn/android_vendor_cyngn" path="vendor/cyngn" revision="e1b7169852f8b6ebd92c59f77a002c6cacb26963" upstream="refs/heads/cm-11.0"/>
   <project groups="pdk" name="device/generic/mini-emulator-armv7-a-neon" remote="aosp" revision="77bb98e878409fb714738170a2df2df1223dd57b" upstream="refs/tags/android-4.4.4_r2"/>
   <project groups="pdk" name="device/generic/mini-emulator-mips" remote="aosp" revision="2ff06dda649ba43507a911057f7854a3373ef7d6" upstream="refs/tags/android-4.4.4_r2"/>
   <project groups="pdk" name="device/generic/mini-emulator-x86" remote="aosp" revision="a2f05b8c5259c232be5b029b2d5e721ba3f70917" upstream="refs/tags/android-4.4.4_r2"/>

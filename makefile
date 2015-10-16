@@ -57,3 +57,5 @@ local-pre-zip-misc:
 
 	@echo Delete some no longer needed files
 	#rm -rf $(ZIP_DIR)/system/csc/common
+	@echo Delete cm files
+	rm -rf $(ZIP_DIR)/system/etc/.has_su_daemon

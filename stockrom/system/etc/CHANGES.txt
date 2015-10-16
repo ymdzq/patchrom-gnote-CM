@@ -1,4 +1,17 @@
 ===================================
+Since Mon Sep  7 01:42:17 UTC 2015
+===================================
+
+   * android
+311a74d manifest: Remove vendor/cyngn repo
+
+   * frameworks/base
+9649fbc National roaming info for new Tuenti MNC in Spain
+
+   * vendor/cm
+4eea643 Add new Tuenti MNC SPN override name
+
+===================================
 Since Mon Aug 24 00:01:43 UTC 2015
 ===================================
 
@@ -203,11 +216,4 @@ d869e89 Prevent integer overflow when allocating native_handle_t
 
    * vendor/cm
 b7842d4 APN: Update configurations for Philippine networks
-
-===================================
-Since Mon Jul  6 02:37:49 UTC 2015
-===================================
-
-   * frameworks/base
-751ec55 SystemUI: Fix mdpi ethernet indicator size
 

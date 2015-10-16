@@ -127,7 +127,7 @@ symlink("/system/xbin/busybox", "/system/xbin/[", "/system/xbin/[[",
 symlink("/system/xbin/pigz", "/system/xbin/unpigz");
 ui_print("Set permission...");
 set_perm_recursive(0, 0, 0755, 0644, "/system");
-set_perm(0, 0, 0755, "/system/addon.d/50-cm.sh");
+set_perm_recursive(0, 0, 0755, 0755, "/system/addon.d");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
 set_perm(0, 3003, 02750, "/system/bin/netcfg");
 set_perm(0, 0, 0755, "/system/bin/ping");
