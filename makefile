@@ -12,14 +12,14 @@ local-out-zip-file := MIUI_n7000.zip
 local-previous-target-dir := 
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := 
+local-modified-apps :=
 
 local-modified-jars :=
 
 # All apks from MIUI
 local-miui-removed-apps := 
 
-local-miui-modified-apps := Browser DeskClock MiuiCompass miuisystem MiuiHome MiuiSuperMarket Music SecurityCenter SoundRecorder TeleService Updater
+local-miui-modified-apps := Browser DeskClock DownloadProvider MiuiCompass miuisystem MiuiHome MiuiSuperMarket Music SecurityCenter SoundRecorder TeleService Updater
 
 local-density := XHDPI
 

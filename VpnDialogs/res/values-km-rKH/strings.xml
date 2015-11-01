@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s ព្យាយាម​បង្កើត​ការ​តភ្ជាប់ VPN ។</string>
+    <string name="warning">ដោយ​បន្ត អ្នក​កំពុង​ផ្ដល់​សិទ្ធិ​ឲ្យ​កម្មវិធី​ទប់ស្កាត់​ចរាចរណ៍​បណ្ដាញ។ <b>កុំ​ទទួល​ លុះ​ត្រា​តែ​អ្នក​ទុក​ចិត្ត​កម្មវិធី។</b> បើ​មិន​ដូច្នេះ​ទេ អ្នក​ដំណើរការ​ប្រឈម​នឹង​គ្រោះថ្នាក់ ដោយ​ទិន្នន័យ​របស់​អ្នក​បាន​សម្របសម្រួល​ដោយ​កម្មវិធី​ព្យាបាទ។</string>
+    <string name="accept">ខ្ញុំ​ទុកចិត្ត​​​កម្មវិធី​នេះ​។</string>
+    <string name="legacy_title">បា​ន​ភ្ជាប់ VPN</string>
+    <string name="configure">កំណត់​រចនាសម្ព័ន្ធ</string>
+    <string name="disconnect">ផ្ដាច់</string>
+    <string name="session">សម័យ៖</string>
+    <string name="duration">ថិរវេលា៖</string>
+    <string name="data_transmitted">បាន​ផ្ញើ៖</string>
+    <string name="data_received">បាន​ទទួល៖</string>
+    <string name="data_value_format">%1$s បៃ / %2$s កញ្ចប់​ព័ត៌មាន</string>
+</resources>

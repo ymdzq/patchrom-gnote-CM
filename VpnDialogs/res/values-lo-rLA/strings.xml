@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s ພະຍາຍາມສ້າງການເຊື່ອມຕໍ່ VPN.</string>
+    <string name="warning">ຖ້າດຳເນີນຕໍ່, ແມ່ນທ່ານກຳລັງຈະໃຫ້ສິດແກ່ແອັບພລິເຄຊັນ ໃນການດັກຂໍ້ມູນຈະລາຈອນໃນເຄືອຂ່າຍທັງໝົດ. <b>ຢ່າຍອມຮັບ ນອກຈາກວ່າທ່ານຈະເຊື່ອໃຈແອັບພລິເຄຊັນດັ່ງກ່າວ.</b> ຖ້າບໍ່ດັ່ງນັ້ນ, ທ່ານຈະຕົກຢູ່ໃນຄວາມສ່ຽງ ທີ່ຂໍ້ມູນຂອງທ່ານຈະຖືກຄຸກຄາມໂດຍຊອບແວທີ່ເປັນອັນຕະລາຍ.</string>
+    <string name="accept">ຂ້ອຍເຊື່ອແອັບພລິເຄຊັນນີ້.</string>
+    <string name="legacy_title">ເຊື່ອມຕໍ່ VPN ແລ້ວ</string>
+    <string name="configure">ປັບຄ່າ</string>
+    <string name="disconnect">ຕັດການເຊື່ອມຕໍ່</string>
+    <string name="session">ເຊສຊັນ:</string>
+    <string name="duration">ໄລຍະເວລາ:</string>
+    <string name="data_transmitted">ສົ່ງ:</string>
+    <string name="data_received">ຮັບ:</string>
+    <string name="data_value_format">%1$s ໄບ / %2$s ແພັກເກັດ</string>
+</resources>

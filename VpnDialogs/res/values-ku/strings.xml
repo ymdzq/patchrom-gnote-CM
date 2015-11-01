@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s هەوڵەکان بۆ دروستکردنی په‌یوه‌ندی VPN     </string>
+    <string name="warning">بە بەردەوامبوون، تۆ داوا كردنەكە پێ دەدەن ڕێگەپێدان تا هەموو هاتوچۆى تۆڕ ڕێ لێ بگرێت. <b>قبوڵ ناكات مەگەر تۆ داوا كردنەكە متمانە دەكەن.</b> ئەگەرنا, تۆ مەترسيى هەبوونى زانياريت لەلايەنێك قيناويتان رەزامەندى دوولايەنە بەرنامە</string>
+    <string name="accept">من متمانە بەم بەرنامەیە ئەکەم.</string>
+    <string name="legacy_title">VPN پەیوەستکراوە</string>
+    <string name="configure">رێکخستن</string>
+    <string name="disconnect">پچڕاندنی پەیوەندی</string>
+    <string name="session">دانشتن:</string>
+    <string name="duration">ماوه‌:</string>
+    <string name="data_transmitted">گەیشت:</string>
+    <string name="data_received">گەیشت:</string>
+    <string name="data_value_format">%1$s بایت / %2$s گیرفانەکان</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s 嘗試建立 VPN 連線。</string>
+    <string name="warning">如果繼續進行，即表示您允許該應用程式攔截所有網絡流量。<b>除非您信任該應用程式，否則不應接受。</b>不然就會讓您的資料陷於遭惡意程式入侵的風險。</string>
+    <string name="accept">我信任這個應用程式。</string>
+    <string name="legacy_title">VPN 已連線</string>
+    <string name="configure">設定</string>
+    <string name="disconnect">中斷連線</string>
+    <string name="session">時段：</string>
+    <string name="duration">持續時間︰</string>
+    <string name="data_transmitted">已傳送：</string>
+    <string name="data_received">已接收：</string>
+    <string name="data_value_format">%1$s 位元組 / %2$s 封包</string>
+</resources>

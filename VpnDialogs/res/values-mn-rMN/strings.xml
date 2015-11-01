@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s VPN холболтыг үүсгэх гэж байна.</string>
+    <string name="warning">Үргэлжлүүлсэнээр та аппликешнд бүх сүлжээний урсгалыг таслах зөвшөөрлийг өгөх болно. <b>Аппикешн баталгаагүй гэж үзсэн тохиолдолд л зөвшөөрч болорхгүй.</b> Бусад тохиолдолд та өөрийн датаг хортой софтверийн аюулд өртөх эрсдэлийг үүсгэж байна.</string>
+    <string name="accept">Би энэ аппликешнд итгэж байна.</string>
+    <string name="legacy_title">VPN холбогдов</string>
+    <string name="configure">Тохируулах</string>
+    <string name="disconnect">Салгах</string>
+    <string name="session">Сешн:</string>
+    <string name="duration">Үргэлжлэх хугацаа:</string>
+    <string name="data_transmitted">Илгээсэн:</string>
+    <string name="data_received">Хүлээн авсан:</string>
+    <string name="data_value_format">%1$s байт/ %2$s пакет</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s intenta crear una conexón VPN.     </string>
+    <string name="warning">"Si sigues, l'aplicación va poder interceutar tol tráficu de rede. "<b>Si nun confíes nesta aplicación, NUN la instales.</b>" En casu contrariu, arriésgueste a que'l software malintencionáu interceute los tos datos."</string>
+    <string name="accept">Confío nesta aplicación.</string>
+    <string name="legacy_title">VPN coneutada</string>
+    <string name="configure">Configurar</string>
+    <string name="disconnect">Desconeutar</string>
+    <string name="session">Sesión:</string>
+    <string name="duration">Duración:</string>
+    <string name="data_transmitted">Unvióse:</string>
+    <string name="data_received">Recibióse:</string>
+    <string name="data_value_format">%1$s bytes / %2$s paquetes     </string>
+</resources>

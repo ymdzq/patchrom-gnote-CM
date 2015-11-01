@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s ცდილობს VPN კავშირის შექმნას.</string>
+    <string name="warning">გაგრძელების შემთხვევაში, აპლიკაციას ექნება ქსელში გადაცემული მონაცემების მოპოვების საშუალება. <b>არ განაგრძოთ, თუ არ ენდობით აპლიკაციას.</b> წინააღმდეგ შემთვევაში შესაძლოა მავნე პროგრამას თქვენ მონაცემებთან წვდომის საშუალება მიეცეს.</string>
+    <string name="accept">ვენდობი ამ აპლიკაციას.</string>
+    <string name="legacy_title">VPN დაკავშირებულია</string>
+    <string name="configure">კონფიგურაცია</string>
+    <string name="disconnect">კავშირის გაწყვეტა</string>
+    <string name="session">სესია:</string>
+    <string name="duration">ხანგრძლივობა:</string>
+    <string name="data_transmitted">გაგზავნილი:</string>
+    <string name="data_received">მიღებული:</string>
+    <string name="data_value_format">%1$s ბაიტი / %2$s პაკეტი</string>
+</resources>

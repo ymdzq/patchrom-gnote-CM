@@ -1,0 +1,32 @@
+From 4723643ed6dcbd804bd8ed79035cffa40db353e1 Mon Sep 17 00:00:00 2001
+From: ymdzq <233900743@qq.com>
+Date: Sun, 18 Oct 2015 21:04:59 +0800
+Subject: [PATCH] patch
+
+---
+ .../smali/com/android/providers/downloads/StorageManager.smali        | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+--- a/DownloadProvider/smali/com/android/providers/downloads/StorageManager.smali
++++ b/DownloadProvider/smali/com/android/providers/downloads/StorageManager.smali
+@@ -36,7 +36,7 @@
+ 
+     move-result-object v0
+ 
+-    const v1, 0x10e0038
++    const v1, 0x10e003b
+ 
+     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+ 
+@@ -54,7 +54,7 @@
+ 
+     move-result-object v0
+ 
+-    const v1, 0x10e003a
++    const v1, 0x10e003d
+ 
+     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+ 
+-- 
+1.9.1
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">%s بىر VPN باغلىنىشى قۇرۇشنى سىنايدۇ</string>
+    <string name="warning">داۋاملاشتۇرسىڭىز بۇ ئەپنىڭ بارلىق تور ئېقىمىنى توسۇش ھوقۇقىنى بەرگەنلىكىڭىزنى بىلدۈرىدۇ.\"<b>ئەگەر بۇ ئەپكە ئىشەنمىسىڭىز بۇ ئىلتىماسنى قوبۇل قىلماڭ. </b>\"ئەگەر مەزكۇر ئەپكە ئىشەنمىگەن ئەھۋالدا بۇ ئىلتىماسنى قوبۇل قىلغان بولسىڭىز سانلىق مەلۇماتلىرىڭىزنىڭ زەھەرخەندە يۇمشاق دېتال تەرىپىدىن ئوغرىلىنىپ كېتىش خەۋپى بار.</string>
+    <string name="accept">بۇ ئەپكە ئىشىنىمەن.</string>
+    <string name="legacy_title">VPN باغلاندى</string>
+    <string name="configure">سەپلىمە</string>
+    <string name="disconnect">ئۈز</string>
+    <string name="session">سۆزلىشىش</string>
+    <string name="duration">داۋاملىشىش ۋاقتى:</string>
+    <string name="data_transmitted">ئەۋەتىلگىنى:</string>
+    <string name="data_received">تاپشۇرۇۋالغىنى:</string>
+    <string name="data_value_format">%1$s بايت/%2$s بوغچا</string>
+</resources>
