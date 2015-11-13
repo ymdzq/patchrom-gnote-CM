@@ -1,4 +1,11 @@
 ===================================
+Since Sun Oct  4 18:15:45 UTC 2015
+===================================
+
+   * packages/apps/LockClock
+e1bb691 LockClock : Add api key for open weather
+
+===================================
 Since Mon Sep  7 01:42:17 UTC 2015
 ===================================
 
@@ -183,37 +190,4 @@ Since Thu Aug 13 05:29:35 UTC 2015
 
    * frameworks/av
 a5dd546 MPEG4Extractor.cpp: handle chunk_size > SIZE_MAX
-
-===================================
-Since Sun Jul 12 20:55:51 UTC 2015
-===================================
-
-   * build
-5b791bd roomservice: use force-sync when adding projects with roomservice
-
-   * external/sonivox
-2be0130 DLS parser: fix wave pool size check.
-
-   * frameworks/av
-49fa7b7 DO NOT MERGE - IOMX: Add buffer range check to emptyBuffer
-42903f8 HDCP: buffer over flow check -- DO NOT MERGE
-c086b29 DO NOT MERGE: Add AUtils::isInRange, and use it to detect malformed MPEG4 nal sizes
-9f65a14 Fix integer overflow when handling MPEG4 tx3g atom
-18b7e3c Fix integer underflow in covr MPEG4 processing
-b5738ab Prevent integer overflow when processing covr MPEG4 atoms
-96bd564 Fix integer underflow in ESDS processing
-c6fc769 Fix several ineffective integer overflow checks
-743caa8 Fix integer overflow during MP4 atom processing
-
-   * frameworks/native
-c491676 Verify that the native handle was created
-
-   * libcore
-e64df66 OpenSSLX509Certificate: mark mContext as transient
-
-   * system/core
-d869e89 Prevent integer overflow when allocating native_handle_t
-
-   * vendor/cm
-b7842d4 APN: Update configurations for Philippine networks
 

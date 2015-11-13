@@ -19450,7 +19450,6 @@
 
     iput-object v3, v0, Landroid/content/pm/PackageParser$Package;->mScanPath:Ljava/lang/String;
 
-    .line 630
     const/4 v3, 0x0
 
     move-object/from16 v0, v30
@@ -19463,19 +19462,16 @@
 
     invoke-direct {v0, v1}, Landroid/content/pm/PackageParser;->doMiuiModify(Landroid/content/pm/PackageParser$Package;)V
 
-    .line 634
     move-object/from16 v0, v30
 
     iget-boolean v3, v0, Landroid/content/pm/PackageParser$Package;->mIsThemeApk:Z
 
     if-eqz v3, :cond_c
 
-    .line 636
     invoke-direct/range {p0 .. p1}, Landroid/content/pm/PackageParser;->scanPackageOverlays(Ljava/io/File;)Ljava/util/ArrayList;
 
     move-result-object v27
 
-    .line 637
     .local v27, "overlayTargets":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 

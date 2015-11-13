@@ -2261,7 +2261,6 @@
 
     iput v2, v0, Lcom/android/server/AlarmManagerService$Alarm;->count:I
 
-    .line 1204
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/AlarmManagerService;->mContext:Landroid/content/Context;
@@ -2280,7 +2279,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1208
     :cond_miui_3
     move-object/from16 v0, v24
 

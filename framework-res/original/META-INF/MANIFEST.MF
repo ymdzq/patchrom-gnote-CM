@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Created-By: 1.7.0_79 (Oracle Corporation)
+Created-By: 1.7.0_55 (Oracle Corporation)
 
 Name: res/drawable-xxhdpi/stat_notify_sdcard.png
 SHA1-Digest: 6wWtelT34CQ/NY0NttCrErSc7bs=
@@ -3057,7 +3057,7 @@ Name: res/drawable-xhdpi/stat_sys_battery_0.png
 SHA1-Digest: ZA9xTtNTwkHsAFXgohfGpn5wha8=
 
 Name: AndroidManifest.xml
-SHA1-Digest: 7WrAsenqiHSCH2n4lVpJ2RFauwY=
+SHA1-Digest: XQ8W0rK+BSogldaAr96NrGSnrzs=
 
 Name: res/drawable-xhdpi/btn_cab_done_pressed_holo_light.9.png
 SHA1-Digest: NVWxb2hr7f0Z5MGsTE4O0g/8fZQ=

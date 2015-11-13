@@ -416,7 +416,6 @@
 
     invoke-virtual {v3}, Lcom/android/server/Watchdog;->start()V
 
-    .line 1199
     iget-object v3, p0, Lcom/android/server/ServerThread$2;->this$0:Lcom/android/server/ServerThread;
 
     # getter for: Lcom/android/server/ServerThread;->mSystemServiceManager:Lcom/android/server/SystemServiceManager;
@@ -428,6 +427,7 @@
 
     invoke-virtual {v3, v4}, Lcom/android/server/SystemServiceManager;->startBootPhase(I)V
 
+    .line 1199
     :try_start_d
     iget-object v3, p0, Lcom/android/server/ServerThread$2;->val$appWidgetF:Lcom/android/server/AppWidgetService;
 

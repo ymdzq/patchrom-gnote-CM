@@ -319,7 +319,7 @@
   <project name="CyanogenMod/android_packages_apps_HTMLViewer" path="packages/apps/HTMLViewer" revision="9448072af75e2ad787add89d51ca3b274bf13c68" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_packages_apps_InCallUI" path="packages/apps/InCallUI" revision="2c5f2ad748ff0e4bcac08ceb800a9d21fde16923" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_packages_apps_KeyChain" path="packages/apps/KeyChain" revision="900e9c6c166c11279bd2eac0d78b7ba1142e6517" upstream="refs/heads/cm-11.0"/>
-  <project name="CyanogenMod/android_packages_apps_LockClock" path="packages/apps/LockClock" revision="9db5852285bce25713241b0e5ec2bfd3d8739b01" upstream="refs/heads/cm-11.0"/>
+  <project name="CyanogenMod/android_packages_apps_LockClock" path="packages/apps/LockClock" revision="e1bb691238962a474cb7f5734585cb958be63e4f" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_packages_apps_Mms-caf" path="packages/apps/Mms" revision="9f5346ff265a253e38e3b0b18c0214c5ef8f3dd3" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_packages_apps_Nfc" path="packages/apps/Nfc" revision="1134cb3df9d73ceb16944fc211a9b4458b0bab79" upstream="refs/heads/cm-11.0"/>
   <project name="CyanogenMod/android_packages_apps_PackageInstaller" path="packages/apps/PackageInstaller" revision="7520df7d7847741bf2b830a7f43fda3bb4595d77" upstream="refs/heads/cm-11.0"/>
