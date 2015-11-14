@@ -4583,7 +4583,7 @@
         apn="internet.itelcel.com"
         authtype="1"
         password="webgprs2002"
-        type="default,supl,dun"
+        type="default,supl"
         user="webgprs"
     />
 
@@ -4591,7 +4591,6 @@
         mcc="334"
         mnc="020"
         apn="mms.itelcel.com"
-        authtype="1"
         mmsc="http://mms.itelcel.com/servlets/mms"
         mmsport="8080"
         mmsproxy="148.233.151.240"
@@ -4623,17 +4622,17 @@
         user="movistar"
     />
 
-    <apn carrier="movistar Internet"
+    <apn carrier="Movistar INTERNET"
         mcc="334"
         mnc="030"
         apn="internet.movistar.mx"
         authtype="1"
         password="movistar"
-        type="default,supl,dun"
+        type="default"
         user="movistar"
     />
 
-    <apn carrier="movistar MMS"
+    <apn carrier="Movistar MMS"
         mcc="334"
         mnc="030"
         apn="mms.movistar.mx"
@@ -4650,9 +4649,8 @@
         mcc="334"
         mnc="050"
         apn="web.iusacellgsm.mx"
-        authtype="0"
         password="Iusacellgsm"
-        type="default,supl,dun"
+        type="default,supl"
         user="Iusacellgsm"
     />
 
@@ -4660,10 +4658,7 @@
         mcc="334"
         mnc="050"
         apn="mms.iusacellgsm.mx"
-        authtype="0"
         mmsc="http://mms.iusacell3g.com/"
-        mmsport="80"
-        mmsproxy="192.200.1.40"
         password="mmsiusacellgsm"
         type="mms"
         user="mmsiusacellgsm"
@@ -4671,22 +4666,56 @@
 
     <apn carrier="Unefon Internet"
         mcc="334"
-        mnc="050"
+        mnc="040"
         apn="web.iusacellgsm.mx"
-        authtype="0"
         password="Iusacellgsm"
-        type="default,supl,dun"
+        type="default,supl"
         user="Iusacellgsm"
     />
 
     <apn carrier="Unefon MMS"
         mcc="334"
-        mnc="050"
+        mnc="040"
         apn="mms.iusacellgsm.mx"
-        authtype="0"
         mmsc="http://mms.iusacell3g.com/"
-        mmsport="80"
-        mmsproxy="192.200.1.40"
+        password="mmsiusacellgsm"
+        type="mms"
+        user="mmsiusacellgsm"
+    />
+
+    <apn carrier="Unefon Internet"
+        mcc="334"
+        mnc="070"
+        apn="web.iusacellgsm.mx"
+        password="Iusacellgsm"
+        type="default,supl"
+        user="Iusacellgsm"
+    />
+
+    <apn carrier="Unefon MMS"
+        mcc="334"
+        mnc="070"
+        apn="mms.iusacellgsm.mx"
+        mmsc="http://mms.iusacell3g.com/"
+        password="mmsiusacellgsm"
+        type="mms"
+        user="mmsiusacellgsm"
+    />
+
+    <apn carrier="Unefon Internet"
+        mcc="334"
+        mnc="080"
+        apn="web.iusacellgsm.mx"
+        password="Iusacellgsm"
+        type="default,supl"
+        user="Iusacellgsm"
+    />
+
+    <apn carrier="Unefon MMS"
+        mcc="334"
+        mnc="080"
+        apn="mms.iusacellgsm.mx"
+        mmsc="http://mms.iusacell3g.com/"
         password="mmsiusacellgsm"
         type="mms"
         user="mmsiusacellgsm"
@@ -17998,7 +18027,7 @@
         type="dun"
     />
 
-    <apn carrier="csl."
+    <apn carrier="csl"
         mcc="454"
         mnc="02"
         apn="mobile"
@@ -18139,7 +18168,7 @@
         type="default,supl,mms"
     />
 
-    <apn carrier="csl."
+    <apn carrier="csl"
         mcc="454"
         mnc="16"
         apn="pccwdata"
@@ -18148,7 +18177,7 @@
         type="default,supl"
     />
 
-    <apn carrier="csl."
+    <apn carrier="csl"
         mcc="454"
         mnc="16"
         apn="pccwmms"
@@ -18185,7 +18214,7 @@
         type="dun"
     />
 
-    <apn carrier="csl."
+    <apn carrier="csl"
         mcc="454"
         mnc="18"
         apn="mobile"

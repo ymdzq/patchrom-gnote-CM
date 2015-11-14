@@ -19,7 +19,7 @@ local-modified-jars :=
 # All apks from MIUI
 local-miui-removed-apps := 
 
-local-miui-modified-apps := Browser DeskClock DownloadProvider MiuiCompass miuisystem MiuiHome MiuiSuperMarket Music SecurityCenter SoundRecorder TeleService Updater
+local-miui-modified-apps := Browser DeskClock DownloadProvider MiuiCompass miuisystem MiuiHome MiuiSuperMarket SecurityCenter SoundRecorder TeleService Updater
 
 local-density := XHDPI
 
