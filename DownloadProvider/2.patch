@@ -14,7 +14,7 @@ Subject: [PATCH] patch
      move-result-object v0
  
 -    const v1, 0x10e0038
-+    const v1, 0x10e003b
++    sget v1, Lcom/android/internal/R$integer;->config_downloadDataDirSize:I
  
      invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
  
@@ -23,7 +23,7 @@ Subject: [PATCH] patch
      move-result-object v0
  
 -    const v1, 0x10e003a
-+    const v1, 0x10e003d
++    sget v1, Lcom/android/internal/R$integer;->config_downloadDataDirLowSpaceThreshold:I
  
      invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
  
