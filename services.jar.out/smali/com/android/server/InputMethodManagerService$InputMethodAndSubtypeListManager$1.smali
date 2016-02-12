@@ -192,17 +192,13 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 3233
     check-cast p1, Landroid/view/inputmethod/InputMethodInfo;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Landroid/view/inputmethod/InputMethodInfo;
 
-    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->compare(Landroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodInfo;)I
 
     move-result v0

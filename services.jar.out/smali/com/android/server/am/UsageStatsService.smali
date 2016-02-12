@@ -2045,7 +2045,7 @@
     invoke-interface {v9}, Lorg/xmlpull/v1/XmlPullParser;->next()I
     :try_end_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move-result v3
@@ -2065,7 +2065,7 @@
     :try_start_1
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 454
     .end local v3    # "eventType":I
@@ -2140,7 +2140,7 @@
     invoke-interface {v9, v12, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_2
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     move-result-object v10
@@ -2167,6 +2167,9 @@
     goto :goto_1
 
     .line 450
+    .end local v3    # "eventType":I
+    .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .end local v11    # "tagName":Ljava/lang/String;
     :catch_0
     move-exception v12
 
@@ -2174,7 +2177,10 @@
 
     .line 417
     .restart local v1    # "depth":I
+    .restart local v3    # "eventType":I
+    .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v10    # "pkg":Ljava/lang/String;
+    .restart local v11    # "tagName":Ljava/lang/String;
     :cond_6
     :try_start_4
     const-string v12, "comp"
@@ -2209,7 +2215,7 @@
     invoke-interface {v9, v12, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_4
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_2
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     move-result-object v7
@@ -2234,7 +2240,7 @@
     :try_end_5
     .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_5} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_2
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 424
@@ -2289,7 +2295,7 @@
     :try_end_7
     .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_7} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_7 .. :try_end_7} :catch_2
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     .line 431
@@ -2319,7 +2325,7 @@
     invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_8
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_8 .. :try_end_8} :catch_2
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_3
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
     move-result v12
@@ -2373,19 +2379,13 @@
     :try_start_a
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
-
-    goto/16 :goto_1
-
-    .line 450
-    :catch_3
-    move-exception v12
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_0
 
     goto/16 :goto_1
 
     .line 444
     .end local v2    # "e":Lorg/xmlpull/v1/XmlPullParserException;
-    :catch_4
+    :catch_3
     move-exception v2
 
     .line 445
@@ -2422,13 +2422,7 @@
     :try_start_c
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_5
-
-    goto/16 :goto_1
-
-    .line 450
-    :catch_5
-    move-exception v12
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_0
 
     goto/16 :goto_1
 
@@ -2443,24 +2437,15 @@
     :try_start_d
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_d
-    .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_7
+    .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_4
 
-    .line 451
+    .line 447
     :cond_9
     :goto_3
     throw v12
 
     .line 450
-    .restart local v3    # "eventType":I
-    .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    :catch_6
-    move-exception v12
-
-    goto/16 :goto_1
-
-    .end local v3    # "eventType":I
-    .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    :catch_7
+    :catch_4
     move-exception v13
 
     goto :goto_3
@@ -3149,6 +3134,7 @@
     .line 609
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
+    .line 608
     throw v2
 .end method
 

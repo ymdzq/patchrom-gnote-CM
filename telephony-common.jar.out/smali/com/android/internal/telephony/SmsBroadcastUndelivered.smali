@@ -323,10 +323,10 @@
 
     move-result-object v3
 
-    :goto_0
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 175
+    :goto_0
     return-void
 
     .line 111
@@ -445,6 +445,8 @@
 
     move-result-object v3
 
+    invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     goto :goto_0
 
     .line 116
@@ -534,7 +536,6 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 169
     throw v2
 
     .line 125
@@ -836,6 +837,8 @@
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 .end method

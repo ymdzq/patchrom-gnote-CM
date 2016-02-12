@@ -14,7 +14,6 @@ system/app/Calendar.apk 0 0 644
 system/app/Camera2.apk 0 0 644
 system/app/CellBroadcastReceiver.apk 0 0 644
 system/app/CertInstaller.apk 0 0 644
-system/app/CMBugReport.apk 0 0 644
 system/app/CMFileManager.apk 0 0 644
 system/app/CMHome.apk 0 0 644
 system/app/CMWallpapers.apk 0 0 644
@@ -243,7 +242,6 @@ system/bin/tune2fs 0 2000 755
 system/bin/uiautomator 0 2000 755
 system/bin/umount 0 2000 755
 system/bin/uncrypt 0 0 750
-system/bin/updater 0 2000 755
 system/bin/uptime 0 2000 755
 system/bin/vdc 0 2000 755
 system/bin/vmstat 0 2000 755
@@ -268,9 +266,7 @@ system/etc/bluetooth 0 0 755
 system/etc/bluetooth/auto_pair_devlist.conf 0 0 644
 system/etc/bluetooth/bt_did.conf 0 0 644
 system/etc/bluetooth/bt_stack.conf 0 0 644
-system/etc/build-manifest.xml 0 0 644
 system/etc/CHANGELOG-CM.txt 0 0 644
-system/etc/CHANGES.txt 0 0 644
 system/etc/clatd.conf 0 0 644
 system/etc/dhcpcd 0 0 755
 system/etc/dhcpcd/dhcpcd.conf 0 0 644
@@ -280,6 +276,7 @@ system/etc/dhcpcd/dhcpcd-hooks/20-dns.conf 0 0 644
 system/etc/dhcpcd/dhcpcd-hooks/95-configured 0 0 644
 system/etc/dhcpcd/dhcpcd-run-hooks 1014 2000 550
 system/etc/event-log-tags 0 0 644
+system/etc/excluded-input-devices.xml 0 0 644
 system/etc/fallback_fonts.xml 0 0 644
 system/etc/gps.conf 0 0 644
 system/etc/gps.xml 0 0 644
@@ -288,6 +285,7 @@ system/etc/hosts 0 0 644
 system/etc/init.d 0 0 755
 system/etc/init.d/00banner 0 2000 755
 system/etc/init.d/90userinit 0 2000 755
+system/etc/init.d/95runtrim 0 2000 755
 system/etc/init.d/98netflix 0 2000 755
 system/etc/media_codecs.xml 0 0 644
 system/etc/media_profiles.xml 0 0 644
@@ -345,6 +343,9 @@ system/etc/permissions/android.software.sip.xml 0 0 644
 system/etc/permissions/com.android.location.provider.xml 0 0 644
 system/etc/permissions/com.android.media.remotedisplay.xml 0 0 644
 system/etc/permissions/com.cyanogenmod.android.xml 0 0 644
+system/etc/permissions/com.cyngn.screencast.xml 0 0 644
+system/etc/permissions/com.cyngn.updater.xml 0 0 644
+system/etc/permissions/com.nextbit.android.xml 0 0 644
 system/etc/permissions/com.tmobile.software.themes.xml 0 0 644
 system/etc/permissions/handheld_core_hardware.xml 0 0 644
 system/etc/permissions/org.cyanogenmod.hardware.xml 0 0 644
@@ -578,10 +579,8 @@ system/etc/wifi/bcmdhd_p2p.bin 0 0 644
 system/etc/wifi/bcmdhd_sta.bin 0 0 644
 system/etc/wifi/nvram_mfg.txt 0 0 644
 system/etc/wifi/nvram_mfg.txt_murata 0 0 644
-system/etc/wifi/nvram_mfg.txt_semcove 0 0 644
 system/etc/wifi/nvram_net.txt 0 0 644
 system/etc/wifi/nvram_net.txt_murata 0 0 644
-system/etc/wifi/nvram_net.txt_semcove 0 0 644
 system/etc/wifi/p2p_supplicant_overlay.conf 0 0 644
 system/etc/wifi/wpa_supplicant.conf 0 0 644
 system/etc/wifi/wpa_supplicant_overlay.conf 0 0 644
@@ -1020,7 +1019,6 @@ system/lib/modules/cifs.ko 0 0 644
 system/lib/modules/dhd.ko 0 0 644
 system/lib/modules/lockd.ko 0 0 644
 system/lib/modules/nfs.ko 0 0 644
-system/lib/modules/rpcsec_gss_krb5.ko 0 0 644
 system/lib/modules/scsi_wait_scan.ko 0 0 644
 system/lib/modules/Si4709_driver.ko 0 0 644
 system/lib/modules/sunrpc.ko 0 0 644
@@ -1270,7 +1268,6 @@ system/priv-app 0 0 755
 system/priv-app/BackupRestoreConfirmation.apk 0 0 644
 system/priv-app/CalendarProvider.apk 0 0 644
 system/priv-app/CMAccount.apk 0 0 644
-system/priv-app/CMUpdater.apk 0 0 644
 system/priv-app/Contacts.apk 0 0 644
 system/priv-app/ContactsProvider.apk 0 0 644
 system/priv-app/DefaultContainerService.apk 0 0 644

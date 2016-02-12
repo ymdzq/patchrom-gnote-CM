@@ -698,6 +698,7 @@
 
     invoke-virtual {v4, v5, v7}, Landroid/content/Context;->revokeUriPermission(Landroid/net/Uri;I)V
 
+    .line 9004
     .end local v1    # "lowThreshold":J
     :goto_1
     return v3
@@ -1104,6 +1105,7 @@
 
     invoke-virtual {v8, v9, v11}, Landroid/content/Context;->revokeUriPermission(Landroid/net/Uri;I)V
 
+    .line 9056
     throw v7
 
     .line 9066

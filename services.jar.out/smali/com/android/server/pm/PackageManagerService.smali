@@ -2038,7 +2038,7 @@
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
     invoke-virtual {v9, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -6859,6 +6859,10 @@
 
     move-object/from16 v17, v0
 
+    .end local v6    # "curUser":I
+    .end local v10    # "now":J
+    .end local v13    # "timeout":J
+    :goto_6
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
@@ -6866,7 +6870,8 @@
     goto/16 :goto_1
 
     .line 10784
-    .end local v10    # "now":J
+    .restart local v6    # "curUser":I
+    .restart local v13    # "timeout":J
     :catchall_0
     move-exception v17
 
@@ -6975,11 +6980,7 @@
 
     move-object/from16 v17, v0
 
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-
-    goto/16 :goto_1
+    goto :goto_6
 .end method
 
 .method private clearIconMapping()V
@@ -7542,9 +7543,9 @@
     .line 5720
     invoke-direct {p0}, Lcom/android/server/pm/PackageManagerService;->cleanupTempManifest()V
 
+    .line 5718
     throw v6
 
-    .line 5718
     .end local v4    # "out":Ljava/io/OutputStream;
     .restart local v0    # "code":I
     .restart local v3    # "hashFile":Ljava/lang/String;
@@ -12028,29 +12029,31 @@
 
     move-object v3, v4
 
+    .line 6053
     .end local v4    # "zfile":Ljava/util/zip/ZipFile;
     .restart local v3    # "zfile":Ljava/util/zip/ZipFile;
     goto :goto_0
 
-    .line 6054
+    .line 6056
     .end local v0    # "crc":J
     .end local v2    # "entry":Ljava/util/zip/ZipEntry;
+    :catchall_0
+    move-exception v5
+
+    :goto_1
+    invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    throw v5
+
+    .line 6054
     :catch_0
     move-exception v6
 
     .line 6056
-    :goto_1
-    invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v5
-
     :goto_2
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    throw v5
+    goto :goto_0
 
     .end local v3    # "zfile":Ljava/util/zip/ZipFile;
     .restart local v4    # "zfile":Ljava/util/zip/ZipFile;
@@ -12061,7 +12064,7 @@
 
     .end local v4    # "zfile":Ljava/util/zip/ZipFile;
     .restart local v3    # "zfile":Ljava/util/zip/ZipFile;
-    goto :goto_2
+    goto :goto_1
 
     .line 6054
     .end local v3    # "zfile":Ljava/util/zip/ZipFile;
@@ -12073,7 +12076,7 @@
 
     .end local v4    # "zfile":Ljava/util/zip/ZipFile;
     .restart local v3    # "zfile":Ljava/util/zip/ZipFile;
-    goto :goto_1
+    goto :goto_2
 .end method
 
 .method private getIdmapHashes(Ljava/io/File;)[I
@@ -16135,7 +16138,7 @@
     .line 5630
     goto :goto_1
 
-    .line 5631
+    .line 5635
     .end local v0    # "actualHashCode":I
     .end local v2    # "dataInput":Ljava/io/DataInputStream;
     .end local v3    # "hashFile":Ljava/lang/String;
@@ -16143,29 +16146,30 @@
     .end local v6    # "storedHashCode":I
     .restart local v1    # "dataInput":Ljava/io/DataInputStream;
     .restart local v4    # "in":Ljava/io/FileInputStream;
-    :catch_0
-    move-exception v8
+    :catchall_0
+    move-exception v7
 
-    .line 5635
     :goto_2
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     .line 5636
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    goto :goto_0
+    .line 5635
+    throw v7
+
+    .line 5631
+    :catch_0
+    move-exception v8
 
     .line 5635
-    :catchall_0
-    move-exception v7
-
     :goto_3
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     .line 5636
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    throw v7
+    goto :goto_0
 
     .line 5635
     .end local v4    # "in":Ljava/io/FileInputStream;
@@ -16178,7 +16182,7 @@
 
     .end local v5    # "in":Ljava/io/FileInputStream;
     .restart local v4    # "in":Ljava/io/FileInputStream;
-    goto :goto_3
+    goto :goto_2
 
     .end local v1    # "dataInput":Ljava/io/DataInputStream;
     .end local v4    # "in":Ljava/io/FileInputStream;
@@ -16195,7 +16199,7 @@
 
     .end local v5    # "in":Ljava/io/FileInputStream;
     .restart local v4    # "in":Ljava/io/FileInputStream;
-    goto :goto_3
+    goto :goto_2
 
     .line 5631
     .end local v4    # "in":Ljava/io/FileInputStream;
@@ -16207,7 +16211,7 @@
 
     .end local v5    # "in":Ljava/io/FileInputStream;
     .restart local v4    # "in":Ljava/io/FileInputStream;
-    goto :goto_2
+    goto :goto_3
 
     .end local v1    # "dataInput":Ljava/io/DataInputStream;
     .end local v4    # "in":Ljava/io/FileInputStream;
@@ -16224,7 +16228,7 @@
 
     .end local v5    # "in":Ljava/io/FileInputStream;
     .restart local v4    # "in":Ljava/io/FileInputStream;
-    goto :goto_2
+    goto :goto_3
 .end method
 
 .method private isNewPlatformPermissionForPackage(Ljava/lang/String;Landroid/content/pm/PackageParser$Package;)Z
@@ -16836,6 +16840,7 @@
     .line 12259
     iget-object v1, v10, Lcom/android/server/pm/PackageManagerService$AsecInstallArgs;->cid:Ljava/lang/String;
 
+    :goto_1
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -16919,11 +16924,7 @@
     .line 12259
     iget-object v1, v10, Lcom/android/server/pm/PackageManagerService$AsecInstallArgs;->cid:Ljava/lang/String;
 
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_0
+    goto :goto_1
 
     .line 12223
     :cond_3
@@ -17029,7 +17030,7 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 12253
-    :goto_1
+    :goto_2
     :try_start_5
     monitor-exit v8
     :try_end_5
@@ -17045,11 +17046,7 @@
     .line 12259
     iget-object v1, v10, Lcom/android/server/pm/PackageManagerService$AsecInstallArgs;->cid:Ljava/lang/String;
 
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_0
+    goto/16 :goto_1
 
     .line 12249
     :catchall_0
@@ -17095,6 +17092,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 12256
     :cond_6
     throw v1
 
@@ -17133,7 +17131,7 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    goto :goto_1
+    goto :goto_2
 
     .line 12264
     .end local v3    # "parseFlags":I
@@ -17166,7 +17164,7 @@
 
     .line 12272
     .local v18, "regrantPermissions":Z
-    :goto_2
+    :goto_3
     if-eqz v18, :cond_9
 
     .line 12273
@@ -17239,7 +17237,7 @@
 
     const/4 v1, 0x6
 
-    :goto_3
+    :goto_4
     or-int/lit8 v1, v1, 0x1
 
     move-object/from16 v0, p0
@@ -17300,7 +17298,7 @@
 
     move-result-object v14
 
-    :goto_4
+    :goto_5
     invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -17349,7 +17347,7 @@
     .line 12300
     invoke-static {v11}, Lcom/android/internal/content/PackageHelper;->destroySdDir(Ljava/lang/String;)Z
 
-    goto :goto_4
+    goto :goto_5
 
     .line 12271
     .end local v11    # "cid":Ljava/lang/String;
@@ -17357,14 +17355,14 @@
     :cond_c
     const/16 v18, 0x0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     .line 12279
     .restart local v18    # "regrantPermissions":Z
     :cond_d
     const/4 v1, 0x0
 
-    goto :goto_3
+    goto :goto_4
 
     .line 12286
     .end local v18    # "regrantPermissions":Z
@@ -17410,7 +17408,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4
+    goto :goto_5
 
     .line 12306
     .end local v11    # "cid":Ljava/lang/String;
@@ -31379,47 +31377,7 @@
 
     goto :goto_0
 
-    :cond_2
-    invoke-static {v6}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-
-    .line 5961
-    invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService;->getPackageHashCode(Landroid/content/pm/PackageParser$Package;)I
-
-    move-result v4
-
-    .line 5962
-    .local v4, "targetHash":I
-    invoke-direct {p0, p2}, Lcom/android/server/pm/PackageManagerService;->getPackageHashCode(Landroid/content/pm/PackageParser$Package;)I
-
-    move-result v3
-
-    .line 5964
-    .local v3, "overlayHash":I
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/pm/PackageManagerService;->getIdmapPath(Landroid/content/pm/PackageParser$Package;Landroid/content/pm/PackageParser$Package;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {v2, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 5965
-    .local v2, "idmap":Ljava/io/File;
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v9
-
-    if-nez v9, :cond_3
-
-    move v7, v8
-
-    .line 5966
-    goto :goto_0
-
     .line 5953
-    .end local v2    # "idmap":Ljava/io/File;
-    .end local v3    # "overlayHash":I
-    .end local v4    # "targetHash":I
     .end local v6    # "zfile":Ljava/util/zip/ZipFile;
     .restart local v5    # "zfile":Ljava/util/zip/ZipFile;
     :catch_0
@@ -31469,12 +31427,46 @@
 
     throw v7
 
-    .line 5970
     .end local v5    # "zfile":Ljava/util/zip/ZipFile;
-    .restart local v2    # "idmap":Ljava/io/File;
-    .restart local v3    # "overlayHash":I
-    .restart local v4    # "targetHash":I
     .restart local v6    # "zfile":Ljava/util/zip/ZipFile;
+    :cond_2
+    invoke-static {v6}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    .line 5961
+    invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService;->getPackageHashCode(Landroid/content/pm/PackageParser$Package;)I
+
+    move-result v4
+
+    .line 5962
+    .local v4, "targetHash":I
+    invoke-direct {p0, p2}, Lcom/android/server/pm/PackageManagerService;->getPackageHashCode(Landroid/content/pm/PackageParser$Package;)I
+
+    move-result v3
+
+    .line 5964
+    .local v3, "overlayHash":I
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {p0, p1, p2}, Lcom/android/server/pm/PackageManagerService;->getIdmapPath(Landroid/content/pm/PackageParser$Package;Landroid/content/pm/PackageParser$Package;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v2, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 5965
+    .local v2, "idmap":Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v9
+
+    if-nez v9, :cond_3
+
+    move v7, v8
+
+    .line 5966
+    goto :goto_0
+
+    .line 5970
     :cond_3
     :try_start_3
     invoke-direct {p0, v2}, Lcom/android/server/pm/PackageManagerService;->getIdmapHashes(Ljava/io/File;)[I
@@ -36544,7 +36536,7 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, p2}, Lcom/android/server/pm/MiuiPackageManagerService;->protectAppFromDeleting(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;)Z
+    invoke-direct {p0, p1, p2}, Lcom/android/server/pm/MiuiPackageManagerService;->protectAppFromDeleting(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;)Z
 
     move-result v0
 
@@ -38599,8 +38591,8 @@
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
     :try_end_5
-    .catch Ljava/io/FileNotFoundException; {:try_start_5 .. :try_end_5} :catch_a
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_9
+    .catch Ljava/io/FileNotFoundException; {:try_start_5 .. :try_end_5} :catch_8
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_7
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     if-eqz v23, :cond_4b
@@ -38608,7 +38600,7 @@
     :try_start_6
     invoke-virtual/range {v23 .. v23}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_7
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .end local v9    # "avail":I
@@ -38626,80 +38618,60 @@
 
     .restart local v17    # "fname":Ljava/io/File;
     .restart local v22    # "in":Ljava/io/FileInputStream;
-    :catch_3
+    :catchall_1
     move-exception v3
 
     :goto_13
-    if-eqz v22, :cond_4b
+    if-eqz v22, :cond_4c
 
     :try_start_8
     invoke-virtual/range {v22 .. v22}, Ljava/io/FileInputStream;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
+
+    :cond_4c
+    :goto_14
+    :try_start_9
+    throw v3
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+
+    :catch_3
+    move-exception v3
+
+    :goto_15
+    if-eqz v22, :cond_4b
+
+    :try_start_a
+    invoke-virtual/range {v22 .. v22}, Ljava/io/FileInputStream;->close()V
 
     goto :goto_12
 
+    .end local v22    # "in":Ljava/io/FileInputStream;
     :catch_4
     move-exception v3
 
     goto :goto_12
 
+    .restart local v22    # "in":Ljava/io/FileInputStream;
     :catch_5
     move-exception v3
 
-    :goto_14
+    :goto_16
     if-eqz v22, :cond_4b
 
-    :try_start_9
     invoke-virtual/range {v22 .. v22}, Ljava/io/FileInputStream;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_6
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    :try_end_a
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_4
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     goto :goto_12
 
     :catch_6
-    move-exception v3
-
-    goto :goto_12
-
-    :catchall_1
-    move-exception v3
-
-    :goto_15
-    if-eqz v22, :cond_4c
-
-    :try_start_a
-    invoke-virtual/range {v22 .. v22}, Ljava/io/FileInputStream;->close()V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_8
-    .catchall {:try_start_a .. :try_end_a} :catchall_0
-
-    :cond_4c
-    :goto_16
-    :try_start_b
-    throw v3
-    :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_0
-
-    .end local v22    # "in":Ljava/io/FileInputStream;
-    .restart local v9    # "avail":I
-    .restart local v12    # "data":[B
-    .restart local v23    # "in":Ljava/io/FileInputStream;
-    :catch_7
-    move-exception v3
-
-    goto :goto_12
-
-    .end local v9    # "avail":I
-    .end local v12    # "data":[B
-    .end local v23    # "in":Ljava/io/FileInputStream;
-    .restart local v22    # "in":Ljava/io/FileInputStream;
-    :catch_8
     move-exception v4
 
-    goto :goto_16
+    goto :goto_14
 
     .end local v22    # "in":Ljava/io/FileInputStream;
     .restart local v23    # "in":Ljava/io/FileInputStream;
@@ -38710,29 +38682,29 @@
 
     .end local v23    # "in":Ljava/io/FileInputStream;
     .restart local v22    # "in":Ljava/io/FileInputStream;
-    goto :goto_15
-
-    .end local v22    # "in":Ljava/io/FileInputStream;
-    .restart local v23    # "in":Ljava/io/FileInputStream;
-    :catch_9
-    move-exception v3
-
-    move-object/from16 v22, v23
-
-    .end local v23    # "in":Ljava/io/FileInputStream;
-    .restart local v22    # "in":Ljava/io/FileInputStream;
-    goto :goto_14
-
-    .end local v22    # "in":Ljava/io/FileInputStream;
-    .restart local v23    # "in":Ljava/io/FileInputStream;
-    :catch_a
-    move-exception v3
-
-    move-object/from16 v22, v23
-
-    .end local v23    # "in":Ljava/io/FileInputStream;
-    .restart local v22    # "in":Ljava/io/FileInputStream;
     goto :goto_13
+
+    .end local v22    # "in":Ljava/io/FileInputStream;
+    .restart local v23    # "in":Ljava/io/FileInputStream;
+    :catch_7
+    move-exception v3
+
+    move-object/from16 v22, v23
+
+    .end local v23    # "in":Ljava/io/FileInputStream;
+    .restart local v22    # "in":Ljava/io/FileInputStream;
+    goto :goto_16
+
+    .end local v22    # "in":Ljava/io/FileInputStream;
+    .restart local v23    # "in":Ljava/io/FileInputStream;
+    :catch_8
+    move-exception v3
+
+    move-object/from16 v22, v23
+
+    .end local v23    # "in":Ljava/io/FileInputStream;
+    .restart local v22    # "in":Ljava/io/FileInputStream;
+    goto :goto_15
 .end method
 
 .method public enterSafeMode()V
@@ -40067,9 +40039,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    :goto_0
     return v4
 
     :cond_1
@@ -40079,10 +40051,6 @@
     move-result v4
 
     monitor-exit v5
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
@@ -40090,15 +40058,14 @@
     :catchall_0
     move-exception v4
 
-    :try_start_3
     monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :try_start_4
+    :try_start_3
     throw v4
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :catchall_1
     move-exception v4
@@ -43147,7 +43114,7 @@
 
     monitor-enter v7
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
     iget-object v8, p0, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
@@ -43161,25 +43128,27 @@
     check-cast v3, Lcom/android/server/pm/PackageSetting;
 
     .local v3, "pkgSetting":Lcom/android/server/pm/PackageSetting;
-    if-nez v3, :cond_2
+    if-nez v3, :cond_3
 
     const/4 v6, -0x3
 
     monitor-exit v7
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    :cond_2
+    :goto_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     :try_start_2
     invoke-virtual {v3, p2}, Lcom/android/server/pm/PackageSetting;->getInstalled(I)Z
 
     move-result v8
 
-    if-nez v8, :cond_3
+    if-nez v8, :cond_4
 
     const/4 v8, 0x1
 
@@ -43195,44 +43164,42 @@
 
     const/4 v4, 0x1
 
-    :cond_3
+    :cond_4
     monitor-exit v7
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_2
 
     :try_start_3
     invoke-direct {p0, p1, v3, p2}, Lcom/android/server/pm/PackageManagerService;->sendPackageAddedForUser(Ljava/lang/String;Lcom/android/server/pm/PackageSetting;I)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    :cond_4
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    goto :goto_1
 
-    goto :goto_0
-
+    .end local v2    # "extras":Landroid/os/Bundle;
     .end local v3    # "pkgSetting":Lcom/android/server/pm/PackageSetting;
     :catchall_0
+    move-exception v6
+
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v6
+
+    .restart local v2    # "extras":Landroid/os/Bundle;
+    :catchall_1
     move-exception v6
 
     :try_start_4
     monitor-exit v7
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :try_start_5
     throw v6
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-
-    .end local v2    # "extras":Landroid/os/Bundle;
-    :catchall_1
-    move-exception v6
-
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v6
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 .end method
 
 .method public installPackage(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;I)V
@@ -48207,35 +48174,24 @@
     goto/16 :goto_1
 
     .restart local v3    # "am":Landroid/app/IActivityManager;
-    .restart local v4    # "arr$":[I
     .restart local v6    # "callingUserId":I
     .restart local v8    # "gp":Lcom/android/server/pm/GrantedPermissions;
-    .restart local v9    # "i$":I
     .restart local v10    # "ident":J
-    .restart local v12    # "len$":I
-    .restart local v16    # "users":[I
-    :cond_8
-    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto/16 :goto_0
-
-    .end local v4    # "arr$":[I
-    .end local v9    # "i$":I
-    .end local v12    # "len$":I
-    .end local v16    # "users":[I
-    :catch_0
-    move-exception v17
-
-    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto/16 :goto_0
-
     :catchall_1
     move-exception v17
 
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v17
+
+    .line 10256
+    :catch_0
+    move-exception v17
+
+    :cond_8
+    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto/16 :goto_0
 .end method
 
 .method public scanAvailableAsecs()V
@@ -48475,23 +48431,25 @@
     check-cast v2, Lcom/android/server/pm/PackageSetting;
 
     .local v2, "pkgSetting":Lcom/android/server/pm/PackageSetting;
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     monitor-exit v7
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    :cond_2
+    :goto_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     :try_start_2
     invoke-virtual {v2, p3}, Lcom/android/server/pm/PackageSetting;->getBlocked(I)Z
 
     move-result v8
 
-    if-eq v8, p2, :cond_3
+    if-eq v8, p2, :cond_4
 
     invoke-virtual {v2, p2, p3}, Lcom/android/server/pm/PackageSetting;->setBlocked(ZI)V
 
@@ -48499,17 +48457,17 @@
 
     invoke-virtual {v8, p3}, Lcom/android/server/pm/Settings;->writePackageRestrictionsLPr(I)V
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_5
 
     const/4 v4, 0x1
 
-    :cond_3
-    :goto_1
+    :cond_4
+    :goto_2
     monitor-exit v7
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     :try_start_3
     invoke-direct {p0, p1, v2, p3}, Lcom/android/server/pm/PackageManagerService;->sendPackageAddedForUser(Ljava/lang/String;Lcom/android/server/pm/PackageSetting;I)V
@@ -48518,14 +48476,12 @@
 
     const/4 v6, 0x1
 
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    goto :goto_1
 
-    goto :goto_0
-
-    :cond_4
+    :cond_5
     const/4 v3, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
     .end local v2    # "pkgSetting":Lcom/android/server/pm/PackageSetting;
     :catchall_0
@@ -48549,8 +48505,8 @@
     throw v6
 
     .restart local v2    # "pkgSetting":Lcom/android/server/pm/PackageSetting;
-    :cond_5
-    if-eqz v4, :cond_6
+    :cond_6
+    if-eqz v4, :cond_2
 
     :try_start_6
     iget v7, v2, Lcom/android/server/pm/PackageSetting;->appId:I
@@ -48567,10 +48523,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    :cond_6
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public setApplicationEnabledSetting(Ljava/lang/String;IIILjava/lang/String;)V
@@ -49406,6 +49359,7 @@
 
     invoke-virtual {v0, v4}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
+    .line 11834
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -49624,11 +49578,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    :goto_0
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .end local v1    # "token":J
     :cond_2
-    :goto_0
     return-void
 
     .end local v0    # "am":Landroid/app/IActivityManager;
@@ -49644,13 +49598,6 @@
 
     .restart local v0    # "am":Landroid/app/IActivityManager;
     .restart local v1    # "token":J
-    :catch_0
-    move-exception v3
-
-    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto :goto_0
-
     :catchall_1
     move-exception v3
 
@@ -49684,6 +49631,13 @@
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v3
+
+    .restart local v0    # "am":Landroid/app/IActivityManager;
+    .restart local v1    # "token":J
+    :catch_0
+    move-exception v3
+
+    goto :goto_0
 .end method
 
 .method public final setPreLaunchCheckActivity(Landroid/content/ComponentName;)V
@@ -49857,6 +49811,7 @@
 
     const/4 v2, 0x0
 
+    .line 11877
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -49868,7 +49823,6 @@
 
     goto :goto_0
 
-    .line 10256
     :catch_0
     move-exception v2
 
@@ -50020,7 +49974,6 @@
 
     if-lez v7, :cond_4
 
-    .line 11877
     const/4 v3, 0x0
 
     .local v3, "j":I

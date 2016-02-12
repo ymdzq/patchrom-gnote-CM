@@ -45,8 +45,10 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
+    .line 173
     const/4 v1, 0x0
 
+    .line 174
     .local v1, "wifiSsid":Landroid/net/wifi/WifiSsid;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -114,7 +116,6 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
     .line 171
@@ -138,7 +139,6 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # I
 
     .prologue
     .line 171

@@ -4,3 +4,5 @@ stockrom.zip
 /temp/*
 updater/
 *delete-zip-file-when-clean
+/security/*
+.rnd

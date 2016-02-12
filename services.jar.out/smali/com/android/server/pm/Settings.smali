@@ -2300,6 +2300,14 @@
     :goto_0
     return-object v2
 
+    .line 2898
+    :catchall_0
+    move-exception v2
+
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v2
+
     .line 2895
     :catch_0
     move-exception v2
@@ -2311,14 +2319,6 @@
     const/4 v2, 0x0
 
     goto :goto_0
-
-    .line 2898
-    :catchall_0
-    move-exception v2
-
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v2
 .end method
 
 .method private getPackageLPw(Ljava/lang/String;Lcom/android/server/pm/PackageSetting;Ljava/lang/String;Lcom/android/server/pm/SharedUserSetting;Ljava/io/File;Ljava/io/File;Ljava/lang/String;IILandroid/os/UserHandle;ZZ)Lcom/android/server/pm/PackageSetting;
@@ -11546,8 +11546,8 @@
 
     invoke-direct {v0, v7}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1938
@@ -11632,8 +11632,8 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_9
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_8
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1962
@@ -11648,12 +11648,18 @@
     goto :goto_3
 
     .line 1965
+    .end local v12    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .end local v16    # "str":Ljava/io/FileInputStream;
+    .end local v17    # "type":I
     :catch_0
     move-exception v18
 
     goto/16 :goto_3
 
     .line 1951
+    .restart local v12    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .restart local v16    # "str":Ljava/io/FileInputStream;
+    .restart local v17    # "type":I
     :cond_a
     :try_start_3
     const-string v18, "preferred-activities"
@@ -11699,8 +11705,8 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_3
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_9
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_8
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_5
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_4
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1962
@@ -11710,13 +11716,7 @@
     :try_start_4
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
-
-    goto/16 :goto_3
-
-    .line 1965
-    :catch_1
-    move-exception v18
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
     goto/16 :goto_3
 
@@ -11731,8 +11731,8 @@
 
     invoke-direct {v0, v1, v12, v2}, Lcom/android/server/pm/Settings;->readDefaultPreferredActivitiesLPw(Lcom/android/server/pm/PackageManagerService;Lorg/xmlpull/v1/XmlPullParser;I)V
     :try_end_5
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_9
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_8
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 1962
@@ -11742,13 +11742,7 @@
     :try_start_6
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
-
-    goto/16 :goto_3
-
-    .line 1965
-    :catch_2
-    move-exception v18
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
     goto/16 :goto_3
 
@@ -11757,7 +11751,7 @@
     .end local v16    # "str":Ljava/io/FileInputStream;
     .end local v17    # "type":I
     .restart local v15    # "str":Ljava/io/FileInputStream;
-    :catch_3
+    :catch_1
     move-exception v6
 
     .line 1958
@@ -11801,19 +11795,13 @@
     :try_start_8
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
-
-    goto/16 :goto_3
-
-    .line 1965
-    :catch_4
-    move-exception v18
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
 
     goto/16 :goto_3
 
     .line 1959
     .end local v6    # "e":Lorg/xmlpull/v1/XmlPullParserException;
-    :catch_5
+    :catch_2
     move-exception v6
 
     .line 1960
@@ -11857,13 +11845,7 @@
     :try_start_a
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_6
-
-    goto/16 :goto_3
-
-    .line 1965
-    :catch_6
-    move-exception v18
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_0
 
     goto/16 :goto_3
 
@@ -11879,15 +11861,15 @@
     :try_start_b
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
     :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_7
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_3
 
-    .line 1966
+    .line 1962
     :cond_c
     :goto_7
     throw v18
 
     .line 1965
-    :catch_7
+    :catch_3
     move-exception v19
 
     goto :goto_7
@@ -11907,7 +11889,7 @@
     .line 1959
     .end local v15    # "str":Ljava/io/FileInputStream;
     .restart local v16    # "str":Ljava/io/FileInputStream;
-    :catch_8
+    :catch_4
     move-exception v6
 
     move-object/from16 v15, v16
@@ -11919,7 +11901,7 @@
     .line 1957
     .end local v15    # "str":Ljava/io/FileInputStream;
     .restart local v16    # "str":Ljava/io/FileInputStream;
-    :catch_9
+    :catch_5
     move-exception v6
 
     move-object/from16 v15, v16

@@ -259,7 +259,7 @@
 
     invoke-virtual {v8}, Ljava/lang/ProcessBuilder;->start()Ljava/lang/Process;
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v5
@@ -273,7 +273,7 @@
 
     invoke-virtual {v8}, Ljava/io/OutputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_7
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_6
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 10198
@@ -285,7 +285,7 @@
 
     invoke-virtual {v8}, Ljava/io/InputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_6
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_5
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 10199
@@ -299,7 +299,7 @@
 
     invoke-direct {v3, v8}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_5
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 10202
@@ -318,7 +318,7 @@
     move-result v6
 
     .local v6, "num":I
-    if-lez v6, :cond_4
+    if-lez v6, :cond_5
 
     iget-object v8, p0, Lcom/android/server/am/ActivityManagerService$19;->val$sb:Ljava/lang/StringBuilder;
 
@@ -418,62 +418,51 @@
 
     .line 10207
     .end local v1    # "e":Ljava/io/IOException;
-    .restart local v0    # "buf":[C
-    .restart local v3    # "input":Ljava/io/InputStreamReader;
-    .restart local v4    # "lines":I
-    .restart local v5    # "logcat":Ljava/lang/Process;
-    .restart local v6    # "num":I
-    .restart local v7    # "setting":Ljava/lang/String;
-    :cond_4
-    if-eqz v3, :cond_3
-
-    :try_start_8
-    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
-
-    goto :goto_5
-
-    :catch_2
-    move-exception v8
-
-    goto :goto_5
-
-    .end local v0    # "buf":[C
-    .end local v3    # "input":Ljava/io/InputStreamReader;
-    .end local v5    # "logcat":Ljava/lang/Process;
-    .end local v6    # "num":I
     .restart local v2    # "input":Ljava/io/InputStreamReader;
+    .restart local v4    # "lines":I
+    .restart local v7    # "setting":Ljava/lang/String;
     :catchall_0
     move-exception v8
 
     :goto_6
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
-    :try_start_9
+    :try_start_8
     invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_4
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
 
-    :cond_5
+    :cond_4
     :goto_7
     throw v8
 
-    .restart local v1    # "e":Ljava/io/IOException;
-    :catch_3
-    move-exception v8
-
-    goto :goto_5
-
-    .end local v1    # "e":Ljava/io/IOException;
-    :catch_4
+    :catch_2
     move-exception v9
 
     goto :goto_7
 
     .end local v2    # "input":Ljava/io/InputStreamReader;
+    :catch_3
+    move-exception v8
+
+    goto :goto_5
+
+    .restart local v0    # "buf":[C
     .restart local v3    # "input":Ljava/io/InputStreamReader;
     .restart local v5    # "logcat":Ljava/lang/Process;
+    .restart local v6    # "num":I
+    :cond_5
+    if-eqz v3, :cond_3
+
+    :try_start_9
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_3
+
+    goto :goto_5
+
+    .end local v0    # "buf":[C
+    .end local v6    # "num":I
     :catchall_1
     move-exception v8
 
@@ -485,20 +474,20 @@
 
     .line 10204
     .end local v5    # "logcat":Ljava/lang/Process;
-    :catch_5
+    :catch_4
     move-exception v1
 
     goto :goto_4
 
     .line 10198
     .restart local v5    # "logcat":Ljava/lang/Process;
-    :catch_6
+    :catch_5
     move-exception v8
 
     goto :goto_2
 
     .line 10197
-    :catch_7
+    :catch_6
     move-exception v8
 
     goto :goto_1

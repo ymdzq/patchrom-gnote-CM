@@ -1002,26 +1002,41 @@
 
     move-result-object v14
 
+    :goto_4
     invoke-static {v13, v14, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_3
 
-    .line 357
+    .line 356
     .end local v1    # "ex":Ljava/io/IOException;
-    .restart local v4    # "outerDepth":I
-    .restart local v5    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    :cond_6
+    :catchall_0
+    move-exception v13
+
+    .line 357
     :try_start_9
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_5
 
+    .line 356
+    :goto_5
+    throw v13
+
+    .line 357
+    .restart local v4    # "outerDepth":I
+    .restart local v5    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    :cond_6
+    :try_start_a
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    :try_end_a
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_7
+
     .line 363
-    :goto_4
+    :goto_6
     const/4 v9, 0x0
 
     .restart local v9    # "ruleType":I
-    :goto_5
+    :goto_7
     invoke-interface {v11}, Ljava/util/List;->size()I
 
     move-result v13
@@ -1044,7 +1059,7 @@
     const/4 v8, 0x0
 
     .local v8, "ruleIndex":I
-    :goto_6
+    :goto_8
     invoke-interface {v10}, Ljava/util/List;->size()I
 
     move-result v13
@@ -1062,7 +1077,7 @@
     .restart local v7    # "rule":Lcom/android/server/firewall/IntentFirewall$Rule;
     const/4 v3, 0x0
 
-    :goto_7
+    :goto_9
     invoke-virtual {v7}, Lcom/android/server/firewall/IntentFirewall$Rule;->getIntentFilterCount()I
 
     move-result v13
@@ -1079,97 +1094,52 @@
     .line 369
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_7
+    goto :goto_9
 
-    .line 358
-    .end local v6    # "resolver":Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;
+    .line 372
+    :cond_7
+    const/4 v3, 0x0
+
+    :goto_a
+    invoke-virtual {v7}, Lcom/android/server/firewall/IntentFirewall$Rule;->getComponentFilterCount()I
+
+    move-result v13
+
+    if-ge v3, v13, :cond_8
+
+    .line 373
+    invoke-virtual {v7, v3}, Lcom/android/server/firewall/IntentFirewall$Rule;->getComponentFilter(I)Landroid/content/ComponentName;
+
+    move-result-object v13
+
+    invoke-virtual {v6, v13, v7}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->addComponentFilter(Landroid/content/ComponentName;Lcom/android/server/firewall/IntentFirewall$Rule;)V
+
+    .line 372
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_a
+
+    .line 367
+    :cond_8
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_8
+
+    .line 363
     .end local v7    # "rule":Lcom/android/server/firewall/IntentFirewall$Rule;
-    .end local v8    # "ruleIndex":I
-    .end local v9    # "ruleType":I
-    .end local v10    # "rules":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/firewall/IntentFirewall$Rule;>;"
-    :catch_5
-    move-exception v1
+    :cond_9
+    add-int/lit8 v9, v9, 0x1
 
-    .line 359
-    .restart local v1    # "ex":Ljava/io/IOException;
-    const-string v13, "IntentFirewall"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "Error while closing "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_4
+    goto :goto_7
 
     .line 358
     .end local v4    # "outerDepth":I
     .end local v5    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .local v1, "ex":Lorg/xmlpull/v1/XmlPullParserException;
-    :catch_6
-    move-exception v1
-
-    .line 359
-    .local v1, "ex":Ljava/io/IOException;
-    const-string v13, "IntentFirewall"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "Error while closing "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto/16 :goto_3
-
-    .line 356
-    .end local v1    # "ex":Ljava/io/IOException;
-    :catchall_0
-    move-exception v13
-
-    .line 357
-    :try_start_a
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_7
-
-    .line 360
-    :goto_8
-    throw v13
-
-    .line 358
-    :catch_7
+    .end local v6    # "resolver":Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;
+    .end local v8    # "ruleIndex":I
+    .end local v9    # "ruleType":I
+    .end local v10    # "rules":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/firewall/IntentFirewall$Rule;>;"
+    :catch_5
     move-exception v1
 
     .line 359
@@ -1198,51 +1168,73 @@
 
     invoke-static {v14, v15, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_8
+    goto :goto_5
 
-    .line 372
+    .line 358
+    .local v1, "ex":Lorg/xmlpull/v1/XmlPullParserException;
+    :catch_6
+    move-exception v1
+
+    .line 359
+    .local v1, "ex":Ljava/io/IOException;
+    const-string v13, "IntentFirewall"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "Error while closing "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    goto/16 :goto_4
+
+    .line 358
     .end local v1    # "ex":Ljava/io/IOException;
     .restart local v4    # "outerDepth":I
     .restart local v5    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v6    # "resolver":Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;
-    .restart local v7    # "rule":Lcom/android/server/firewall/IntentFirewall$Rule;
-    .restart local v8    # "ruleIndex":I
-    .restart local v9    # "ruleType":I
-    .restart local v10    # "rules":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/firewall/IntentFirewall$Rule;>;"
-    :cond_7
-    const/4 v3, 0x0
+    :catch_7
+    move-exception v1
 
-    :goto_9
-    invoke-virtual {v7}, Lcom/android/server/firewall/IntentFirewall$Rule;->getComponentFilterCount()I
+    .line 359
+    .restart local v1    # "ex":Ljava/io/IOException;
+    const-string v13, "IntentFirewall"
 
-    move-result v13
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    if-ge v3, v13, :cond_8
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 373
-    invoke-virtual {v7, v3}, Lcom/android/server/firewall/IntentFirewall$Rule;->getComponentFilter(I)Landroid/content/ComponentName;
+    const-string v15, "Error while closing "
 
-    move-result-object v13
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v13, v7}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->addComponentFilter(Landroid/content/ComponentName;Lcom/android/server/firewall/IntentFirewall$Rule;)V
+    move-result-object v14
 
-    .line 372
-    add-int/lit8 v3, v3, 0x1
+    move-object/from16 v0, p1
 
-    goto :goto_9
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 367
-    :cond_8
-    add-int/lit8 v8, v8, 0x1
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto/16 :goto_6
-
-    .line 363
-    .end local v7    # "rule":Lcom/android/server/firewall/IntentFirewall$Rule;
-    :cond_9
-    add-int/lit8 v9, v9, 0x1
-
-    goto/16 :goto_5
 .end method
 
 .method private readRulesDir(Ljava/io/File;)V

@@ -3947,6 +3947,7 @@
     .line 274
     iget-object v4, p0, Lcom/android/server/am/ProcessStatsService;->mWriteLock:Ljava/util/concurrent/locks/ReentrantLock;
 
+    :goto_1
     invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     goto :goto_0
@@ -3995,9 +3996,7 @@
     .line 274
     iget-object v4, p0, Lcom/android/server/am/ProcessStatsService;->mWriteLock:Ljava/util/concurrent/locks/ReentrantLock;
 
-    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    goto :goto_0
+    goto :goto_1
 
     .line 272
     .end local v1    # "e":Ljava/io/IOException;
@@ -4014,6 +4013,7 @@
 
     invoke-virtual {v5}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
+    .line 272
     throw v4
 .end method
 

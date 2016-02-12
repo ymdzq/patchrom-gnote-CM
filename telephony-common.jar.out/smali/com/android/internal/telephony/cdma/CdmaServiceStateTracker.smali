@@ -3003,7 +3003,7 @@
 
     invoke-virtual/range {v34 .. v34}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1525
+    .line 1522
     throw v33
     :try_end_8
     .catch Ljava/lang/RuntimeException; {:try_start_8 .. :try_end_8} :catch_0

@@ -1178,9 +1178,10 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1298
+    :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    :goto_0
+    .line 1296
     return v3
 
     .line 1295
@@ -1191,11 +1192,9 @@
     .local v2, "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v3, -0x1
 
-    .line 1298
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
     goto :goto_0
 
+    .line 1298
     .end local v2    # "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catchall_0
     move-exception v3
@@ -1680,7 +1679,7 @@
     :try_start_1
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 1364
     .end local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
@@ -1727,7 +1726,7 @@
 
     const/4 v12, 0x1
 
-    if-eq v7, v12, :cond_8
+    if-eq v7, v12, :cond_9
 
     .line 1328
     const/4 v12, 0x2
@@ -1935,73 +1934,47 @@
     :try_start_5
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
-
-    goto/16 :goto_0
-
-    .line 1360
-    :catch_3
-    move-exception v12
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
     goto/16 :goto_0
 
     .line 1357
-    .restart local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v6    # "restrictionsFile":Landroid/util/AtomicFile;
-    .restart local v7    # "type":I
-    :cond_8
-    if-eqz v1, :cond_2
+    :catchall_0
+    move-exception v12
+
+    if-eqz v1, :cond_8
 
     .line 1359
     :try_start_6
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
-
-    goto/16 :goto_0
-
-    .line 1360
-    :catch_4
-    move-exception v12
-
-    goto/16 :goto_0
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
     .line 1357
-    .end local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v6    # "restrictionsFile":Landroid/util/AtomicFile;
-    .end local v7    # "type":I
-    :catchall_0
-    move-exception v12
+    :cond_8
+    :goto_3
+    throw v12
 
-    if-eqz v1, :cond_9
+    .line 1360
+    :catch_3
+    move-exception v13
+
+    goto :goto_3
+
+    .line 1357
+    .restart local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .restart local v6    # "restrictionsFile":Landroid/util/AtomicFile;
+    .restart local v7    # "type":I
+    :cond_9
+    if-eqz v1, :cond_2
 
     .line 1359
     :try_start_7
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
-
-    .line 1361
-    :cond_9
-    :goto_3
-    throw v12
-
-    .line 1360
-    .restart local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v6    # "restrictionsFile":Landroid/util/AtomicFile;
-    .restart local v7    # "type":I
-    :catch_5
-    move-exception v12
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
 
     goto/16 :goto_0
-
-    .end local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v6    # "restrictionsFile":Landroid/util/AtomicFile;
-    .end local v7    # "type":I
-    :catch_6
-    move-exception v13
-
-    goto :goto_3
 .end method
 
 .method private readBoolean(Lorg/xmlpull/v1/XmlPullParser;Landroid/os/Bundle;Ljava/lang/String;)V
@@ -2208,7 +2181,7 @@
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->fallbackToSingleUserLocked()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 551
@@ -2223,12 +2196,16 @@
     goto :goto_0
 
     .line 554
+    .end local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .end local v6    # "type":I
     :catch_0
     move-exception v10
 
     goto :goto_0
 
     .line 516
+    .restart local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .restart local v6    # "type":I
     :cond_4
     const/4 v10, -0x1
 
@@ -2378,7 +2355,7 @@
     iput v10, p0, Lcom/android/server/pm/UserManagerService;->mNextSerialNumber:I
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_1
@@ -2405,13 +2382,7 @@
     :try_start_4
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-
-    goto/16 :goto_0
-
-    .line 554
-    :catch_2
-    move-exception v10
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
     goto/16 :goto_0
 
@@ -2427,7 +2398,7 @@
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->upgradeIfNecessaryLocked()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_4
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_2
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 551
@@ -2437,20 +2408,14 @@
     :try_start_6
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
-
-    goto/16 :goto_0
-
-    .line 554
-    :catch_3
-    move-exception v10
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
     goto/16 :goto_0
 
     .line 548
     .end local v4    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v6    # "type":I
-    :catch_4
+    :catch_2
     move-exception v5
 
     .line 549
@@ -2467,13 +2432,7 @@
     :try_start_8
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_5
-
-    goto/16 :goto_0
-
-    .line 554
-    :catch_5
-    move-exception v10
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
 
     goto/16 :goto_0
 
@@ -2488,15 +2447,15 @@
     :try_start_9
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_6
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_3
 
-    .line 555
+    .line 551
     :cond_a
     :goto_2
     throw v10
 
     .line 554
-    :catch_6
+    :catch_3
     move-exception v11
 
     goto :goto_2
@@ -2698,7 +2657,7 @@
     :try_start_1
     invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 847
     .end local v17    # "parser":Lorg/xmlpull/v1/XmlPullParser;
@@ -2785,12 +2744,14 @@
     goto :goto_0
 
     .line 843
+    .end local v25    # "storedId":I
     :catch_0
     move-exception v31
 
     goto :goto_0
 
     .line 776
+    .restart local v25    # "storedId":I
     :cond_4
     :try_start_4
     const-string v31, "serialNumber"
@@ -3237,7 +3198,7 @@
     :try_start_5
     invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_6
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
     .line 847
     :cond_9
@@ -3392,26 +3353,19 @@
     :try_start_7
     invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
 
     goto/16 :goto_0
 
-    .line 843
-    :catch_2
-    move-exception v31
-
-    goto/16 :goto_0
-
-    .line 838
+    .line 840
     .end local v17    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v27    # "type":I
     .end local v28    # "userFile":Landroid/util/AtomicFile;
     .end local v29    # "userInfo":Landroid/content/pm/UserInfo;
-    :catch_3
+    :catchall_0
     move-exception v31
 
-    .line 840
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_d
 
     .line 842
     :try_start_8
@@ -3419,49 +3373,34 @@
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
 
-    goto/16 :goto_2
-
-    .line 843
-    :catch_4
-    move-exception v31
-
-    goto/16 :goto_2
-
     .line 840
-    :catchall_0
-    move-exception v31
-
-    if-eqz v8, :cond_d
-
-    .line 842
-    :try_start_9
-    invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_7
-
-    .line 844
     :cond_d
     :goto_3
     throw v31
 
     .line 843
-    .restart local v17    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v27    # "type":I
-    .restart local v28    # "userFile":Landroid/util/AtomicFile;
-    :catch_5
-    move-exception v31
-
-    goto/16 :goto_0
-
-    .end local v17    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v27    # "type":I
-    .end local v28    # "userFile":Landroid/util/AtomicFile;
-    :catch_6
+    :catch_2
     move-exception v31
 
     goto/16 :goto_2
 
-    :catch_7
+    .line 838
+    :catch_3
+    move-exception v31
+
+    .line 840
+    if-eqz v8, :cond_9
+
+    .line 842
+    :try_start_9
+    invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_2
+
+    goto/16 :goto_2
+
+    .line 843
+    :catch_4
     move-exception v32
 
     goto :goto_3
@@ -5468,7 +5407,7 @@
 
     monitor-enter v12
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 945
     :try_start_1
@@ -5478,7 +5417,7 @@
 
     monitor-enter v13
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 946
     :try_start_2
@@ -5486,28 +5425,29 @@
 
     move-result v11
 
-    if-eqz v11, :cond_0
+    if-eqz v11, :cond_1
 
     const/4 v9, 0x0
 
     monitor-exit v13
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :try_start_3
     monitor-exit v12
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 973
+    :cond_0
+    :goto_0
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 975
-    :goto_0
     return-object v9
 
     .line 947
-    :cond_0
+    :cond_1
     :try_start_4
     invoke-direct/range {p0 .. p0}, Lcom/android/server/pm/UserManagerService;->getNextAvailableIdLocked()I
 
@@ -5635,16 +5575,16 @@
     .line 964
     monitor-exit v13
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 965
     :try_start_5
     monitor-exit v12
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 966
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_0
 
     .line 967
     :try_start_6
@@ -5673,18 +5613,28 @@
 
     invoke-virtual {v11, v2, v12, v13}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
-
-    .line 973
-    .end local v2    # "addedIntent":Landroid/content/Intent;
-    :cond_1
-    invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     goto/16 :goto_0
 
-    .line 952
+    .line 973
+    .end local v2    # "addedIntent":Landroid/content/Intent;
     .end local v7    # "restrictions":Landroid/os/Bundle;
+    .end local v8    # "userId":I
+    .end local v9    # "userInfo":Landroid/content/pm/UserInfo;
+    .end local v10    # "userPath":Ljava/io/File;
+    :catchall_0
+    move-exception v11
+
+    invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v11
+
+    .line 952
     .restart local v5    # "now":J
+    .restart local v8    # "userId":I
+    .restart local v9    # "userInfo":Landroid/content/pm/UserInfo;
+    .restart local v10    # "userPath":Ljava/io/File;
     :cond_2
     const-wide/16 v5, 0x0
 
@@ -5695,37 +5645,29 @@
     .end local v8    # "userId":I
     .end local v9    # "userInfo":Landroid/content/pm/UserInfo;
     .end local v10    # "userPath":Ljava/io/File;
-    :catchall_0
+    :catchall_1
     move-exception v11
 
     :try_start_7
     monitor-exit v13
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     :try_start_8
     throw v11
 
     .line 965
-    :catchall_1
+    :catchall_2
     move-exception v11
 
     monitor-exit v12
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     :try_start_9
     throw v11
     :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_2
-
-    .line 973
-    :catchall_2
-    move-exception v11
-
-    invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v11
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
 .end method
 
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V

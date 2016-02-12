@@ -45,14 +45,11 @@
 # virtual methods
 .method protected bridge synthetic allowFilterResult(Landroid/content/IntentFilter;Ljava/util/List;)Z
     .locals 1
-    .param p1, "x0"    # Landroid/content/IntentFilter;
-    .param p2, "x1"    # Ljava/util/List;
 
     .prologue
     .line 658
     check-cast p1, Lcom/android/server/am/BroadcastFilter;
 
-    .end local p1    # "x0":Landroid/content/IntentFilter;
     invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$1;->allowFilterResult(Lcom/android/server/am/BroadcastFilter;Ljava/util/List;)Z
 
     move-result v0
@@ -136,14 +133,11 @@
 
 .method protected bridge synthetic isPackageForFilter(Ljava/lang/String;Landroid/content/IntentFilter;)Z
     .locals 1
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # Landroid/content/IntentFilter;
 
     .prologue
     .line 658
     check-cast p2, Lcom/android/server/am/BroadcastFilter;
 
-    .end local p2    # "x1":Landroid/content/IntentFilter;
     invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$1;->isPackageForFilter(Ljava/lang/String;Lcom/android/server/am/BroadcastFilter;)Z
 
     move-result v0
@@ -169,7 +163,6 @@
 
 .method protected bridge synthetic newArray(I)[Landroid/content/IntentFilter;
     .locals 1
-    .param p1, "x0"    # I
 
     .prologue
     .line 658
@@ -231,15 +224,11 @@
 
 .method protected bridge synthetic newResult(Landroid/content/IntentFilter;II)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Landroid/content/IntentFilter;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 658
     check-cast p1, Lcom/android/server/am/BroadcastFilter;
 
-    .end local p1    # "x0":Landroid/content/IntentFilter;
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/server/am/ActivityManagerService$1;->newResult(Lcom/android/server/am/BroadcastFilter;II)Lcom/android/server/am/BroadcastFilter;
 
     move-result-object v0

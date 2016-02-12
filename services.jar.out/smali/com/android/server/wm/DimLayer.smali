@@ -130,10 +130,10 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 78
+    :goto_0
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     .line 80
-    :goto_0
     return-void
 
     .line 75
@@ -151,11 +151,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 78
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
-
     goto :goto_0
 
+    .line 78
     .end local v8    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v0

@@ -2626,10 +2626,11 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 740
+    :goto_0
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 742
-    :goto_0
+    :goto_1
     return v2
 
     .line 720
@@ -2667,17 +2668,35 @@
     const/4 v2, -0x1
 
     monitor-exit v16
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 740
-    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    .line 727
-    :cond_9
+    .line 738
+    .end local v12    # "device":Lcom/android/server/display/DisplayDevice;
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v16
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
     :try_start_3
+    throw v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    .line 740
+    :catchall_1
+    move-exception v2
+
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v2
+
+    .line 727
+    .restart local v12    # "device":Lcom/android/server/display/DisplayDevice;
+    :cond_9
+    :try_start_4
     move-object/from16 v0, p0
 
     invoke-direct {v0, v12}, Lcom/android/server/display/DisplayManagerService;->handleDisplayDeviceAddedLocked(Lcom/android/server/display/DisplayDevice;)V
@@ -2699,17 +2718,11 @@
     move-result v2
 
     monitor-exit v16
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 740
-    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
     .line 734
     :cond_a
-    :try_start_4
     const-string v2, "DisplayManagerService"
 
     const-string v3, "Rejecting request to create virtual display because the logical display was not created."
@@ -2741,31 +2754,7 @@
     .line 742
     const/4 v2, -0x1
 
-    goto :goto_0
-
-    .line 738
-    .end local v12    # "device":Lcom/android/server/display/DisplayDevice;
-    .end local v13    # "display":Lcom/android/server/display/LogicalDisplay;
-    :catchall_0
-    move-exception v2
-
-    :try_start_5
-    monitor-exit v16
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    :try_start_6
-    throw v2
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    .line 740
-    :catchall_1
-    move-exception v2
-
-    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v2
+    goto :goto_1
 .end method
 
 .method public disconnectWifiDisplay()V
@@ -3743,6 +3732,7 @@
     .line 435
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 432
     return-object v3
 
     .line 433
@@ -3843,23 +3833,18 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 406
-    invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
     .end local v2    # "info":Landroid/view/DisplayInfo;
     :goto_0
-    return-object v2
+    invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 403
+    return-object v2
+
     :cond_0
     const/4 v2, 0x0
 
     :try_start_2
     monitor-exit v6
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 406
-    invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
@@ -3868,15 +3853,14 @@
     :catchall_0
     move-exception v5
 
-    :try_start_3
     monitor-exit v6
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :try_start_4
+    :try_start_3
     throw v5
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 406
     :catchall_1
@@ -3923,12 +3907,12 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 667
+    :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    :goto_0
+    .line 664
     return-object v2
 
-    .line 664
     :cond_0
     :try_start_2
     new-instance v2, Landroid/hardware/display/WifiDisplayStatus;
@@ -3936,11 +3920,6 @@
     invoke-direct {v2}, Landroid/hardware/display/WifiDisplayStatus;-><init>()V
 
     monitor-exit v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 667
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
@@ -3948,15 +3927,14 @@
     :catchall_0
     move-exception v2
 
-    :try_start_3
     monitor-exit v3
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :try_start_4
+    :try_start_3
     throw v2
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 667
     :catchall_1
@@ -4298,10 +4276,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 761
+    :goto_0
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 763
-    :goto_0
     return-void
 
     .line 754
@@ -4323,28 +4301,21 @@
     .line 759
     :cond_1
     monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 761
-    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    .line 759
     .end local v0    # "device":Lcom/android/server/display/DisplayDevice;
     :catchall_0
     move-exception v3
 
-    :try_start_3
     monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :try_start_4
+    :try_start_3
     throw v3
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 761
     :catchall_1

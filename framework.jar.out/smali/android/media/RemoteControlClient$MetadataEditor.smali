@@ -310,8 +310,6 @@
 
 .method public bridge synthetic putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;
     .locals 1
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Landroid/graphics/Bitmap;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
@@ -362,8 +360,6 @@
 
 .method public bridge synthetic putLong(IJ)Landroid/media/MediaMetadataEditor;
     .locals 1
-    .param p1, "x0"    # I
-    .param p2, "x1"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
@@ -414,8 +410,6 @@
 
 .method public bridge synthetic putString(ILjava/lang/String;)Landroid/media/MediaMetadataEditor;
     .locals 1
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;

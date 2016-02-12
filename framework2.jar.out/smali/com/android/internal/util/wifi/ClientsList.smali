@@ -586,7 +586,6 @@
 
     move-result v1
 
-    .line 135
     goto :goto_0
 
     .line 117

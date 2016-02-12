@@ -1,0 +1,10 @@
+#!/system/bin/sh
+# run trim 1 time after reboot if the file /cache/trim is found
+
+if [ -f /cache/trim ]; then
+/system/xbin/fstrim /system
+/system/xbin/fstrim /cache
+/system/xbin/fstrim /data
+/system/xbin/fstrim /preload
+rm /cache/trim
+fi;

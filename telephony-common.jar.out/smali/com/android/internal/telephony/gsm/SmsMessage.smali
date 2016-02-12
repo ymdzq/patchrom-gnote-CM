@@ -59,21 +59,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 48
     invoke-direct {p0}, Lcom/android/internal/telephony/SmsMessageBase;-><init>()V
 
-    .line 69
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mReplyPathPresent:Z
 
-    .line 82
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mIsStatusReportMessage:Z
 
-    .line 84
     iput v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mVoiceMailCount:I
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mEncodingType:I
 
-    .line 619
     return-void
 .end method
 
@@ -2797,7 +2792,6 @@
 
     goto/16 :goto_4
 
-    .line 1368
     .end local v4    # "i$":Ljava/util/Iterator;
     .end local v5    # "msg":Lcom/android/internal/telephony/SmsHeader$SpecialSmsMsg;
     .end local v6    # "msgInd":I
@@ -2806,29 +2800,23 @@
 
     packed-switch v2, :pswitch_data_1
 
-    .line 1391
     :goto_b
     iget-object v8, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mMessageBody:Ljava/lang/String;
 
     if-eqz v8, :cond_18
 
-    .line 1392
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseMessageBody()V
 
-    .line 1395
     :cond_18
     if-nez v3, :cond_1b
 
-    .line 1396
     sget-object v8, Lcom/android/internal/telephony/SmsConstants$MessageClass;->UNKNOWN:Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
     iput-object v8, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->messageClass:Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
-    .line 1413
     :goto_c
     return-void
 
-    .line 1371
     :pswitch_3
     const/4 v8, 0x0
 

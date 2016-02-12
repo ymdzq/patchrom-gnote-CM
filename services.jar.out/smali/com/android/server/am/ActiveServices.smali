@@ -2461,6 +2461,7 @@
     .line 1426
     invoke-direct {p0, p1, v2}, Lcom/android/server/am/ActiveServices;->scheduleServiceRestartLocked(Lcom/android/server/am/ServiceRecord;Z)Z
 
+    .line 1423
     :cond_6
     throw v0
 .end method
@@ -9321,22 +9322,22 @@
 
     .line 2251
     .end local v0    # "alls":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Landroid/content/ComponentName;Lcom/android/server/am/ServiceRecord;>;"
+    .end local v1    # "i":I
     .end local v5    # "r":Lcom/android/server/am/ServiceRecord;
     .end local v10    # "userId":I
-    :cond_5
-    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    .line 2254
-    return-object v6
-
-    .line 2251
-    .end local v1    # "i":I
     :catchall_0
     move-exception v12
 
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v12
+
+    .restart local v1    # "i":I
+    :cond_5
+    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    .line 2254
+    return-object v6
 .end method
 
 .method getServiceByName(Landroid/content/ComponentName;I)Lcom/android/server/am/ServiceRecord;

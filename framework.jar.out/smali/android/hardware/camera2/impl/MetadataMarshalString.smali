@@ -102,16 +102,11 @@
 
 .method public bridge synthetic marshal(Ljava/lang/Object;Ljava/nio/ByteBuffer;IZ)I
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/nio/ByteBuffer;
-    .param p3, "x2"    # I
-    .param p4, "x3"    # Z
 
     .prologue
     .line 21
     check-cast p1, Ljava/lang/String;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/hardware/camera2/impl/MetadataMarshalString;->marshal(Ljava/lang/String;Ljava/nio/ByteBuffer;IZ)I
 
     move-result v0
@@ -157,8 +152,6 @@
 
 .method public bridge synthetic unmarshal(Ljava/nio/ByteBuffer;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Ljava/nio/ByteBuffer;
-    .param p2, "x1"    # I
 
     .prologue
     .line 21

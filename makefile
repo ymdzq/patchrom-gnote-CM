@@ -12,16 +12,19 @@ local-out-zip-file := MIUI_n7000.zip
 local-previous-target-dir := 
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps :=
+local-modified-apps := 
 
 local-modified-jars :=
 
 # All apks from MIUI
 local-miui-removed-apps := 
 
-local-miui-modified-apps := Browser DeskClock DownloadProvider MiuiCompass miuisystem MiuiHome MiuiSuperMarket SoundRecorder TeleService Updater XiaomiServiceFramework
+local-miui-modified-apps := Browser DeskClock DownloadProvider MiuiCompass miuisystem MiuiHome MiuiSuperMarket SecurityCenter SoundRecorder TeleService Updater XiaomiServiceFramework
 
 local-density := XHDPI
+
+# The certificate for release version
+local-certificate-dir := security
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
@@ -44,8 +47,8 @@ local-pre-zip-misc:
 
 	@echo Replace system files
 	cp -rf other/system $(ZIP_DIR)/
-	cp $(SYSOUT_DIR)/app/QuickSearchBox.apk $(ZIP_DIR)/system/priv-app/QuickSearchBox.apk
-	rm -rf $(ZIP_DIR)/system/app/QuickSearchBox.apk
+	#cp $(SYSOUT_DIR)/app/QuickSearchBox.apk $(ZIP_DIR)/system/priv-app/QuickSearchBox.apk
+	#rm -rf $(ZIP_DIR)/system/app/QuickSearchBox.apk
 
 	@echo Use stock bin files to avoid xposed bootloops
 	rm -rf $(ZIP_DIR)/system/bin/app_process_vendor

@@ -1101,9 +1101,9 @@
     :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 153
     return-object v4
 
-    .line 153
     :cond_0
     :try_start_1
     invoke-static {v2}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
@@ -1156,8 +1156,10 @@
     .line 123
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 121
     return-object v3
 
+    .line 123
     :catchall_0
     move-exception v3
 

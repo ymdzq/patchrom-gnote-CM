@@ -545,7 +545,7 @@
 
     invoke-direct {v3}, Ljava/net/InetSocketAddress;-><init>()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 126
     .local v3, "peer":Ljava/net/InetSocketAddress;
@@ -601,7 +601,7 @@
 
     invoke-interface {v8, v4, v0, v9, v10}, Llibcore/io/Os;->write(Ljava/io/FileDescriptor;[BII)I
     :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_7
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 156
     :goto_1
@@ -611,7 +611,7 @@
     invoke-interface {v8, v4}, Llibcore/io/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_3
     .catch Llibcore/io/ErrnoException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
     goto :goto_0
 
@@ -649,7 +649,7 @@
 
     invoke-interface {v8, v4, v0, v9, v10}, Llibcore/io/Os;->write(Ljava/io/FileDescriptor;[BII)I
     :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
     .line 156
     :goto_2
@@ -658,19 +658,37 @@
 
     invoke-interface {v8, v4}, Llibcore/io/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_6
-    .catch Llibcore/io/ErrnoException; {:try_start_6 .. :try_end_6} :catch_2
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    .catch Llibcore/io/ErrnoException; {:try_start_6 .. :try_end_6} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
 
     goto :goto_0
 
-    .line 157
+    .line 165
+    .end local v2    # "e":Ljava/lang/Exception;
+    .end local v3    # "peer":Ljava/net/InetSocketAddress;
+    .end local v4    # "peerFd":Ljava/io/FileDescriptor;
+    .end local v5    # "serverFd":Ljava/io/FileDescriptor;
+    .end local v6    # "sockAddr":Ljava/net/InetUnixAddress;
     :catch_2
-    move-exception v8
+    move-exception v2
 
-    goto :goto_0
+    .line 166
+    .restart local v2    # "e":Ljava/lang/Exception;
+    const-string v8, "NativeCrashListener"
+
+    const-string v9, "Unable to init native debug socket!"
+
+    invoke-static {v8, v9, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 168
+    return-void
 
     .line 146
     .end local v2    # "e":Ljava/lang/Exception;
+    .restart local v3    # "peer":Ljava/net/InetSocketAddress;
+    .restart local v4    # "peerFd":Ljava/io/FileDescriptor;
+    .restart local v5    # "serverFd":Ljava/io/FileDescriptor;
+    .restart local v6    # "sockAddr":Ljava/net/InetUnixAddress;
     :catchall_0
     move-exception v8
 
@@ -686,7 +704,7 @@
 
     invoke-interface {v9, v4, v0, v10, v11}, Llibcore/io/Os;->write(Ljava/io/FileDescriptor;[BII)I
     :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_6
 
     .line 156
     :goto_3
@@ -695,62 +713,39 @@
 
     invoke-interface {v9, v4}, Llibcore/io/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_8
-    .catch Llibcore/io/ErrnoException; {:try_start_8 .. :try_end_8} :catch_4
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_3
+    .catch Llibcore/io/ErrnoException; {:try_start_8 .. :try_end_8} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
-    .line 161
+    .line 146
     :cond_3
     :goto_4
     :try_start_9
     throw v8
     :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_2
 
-    .line 165
-    .end local v3    # "peer":Ljava/net/InetSocketAddress;
-    .end local v4    # "peerFd":Ljava/io/FileDescriptor;
-    .end local v5    # "serverFd":Ljava/io/FileDescriptor;
-    .end local v6    # "sockAddr":Ljava/net/InetUnixAddress;
+    .line 149
     :catch_3
-    move-exception v2
+    move-exception v8
 
-    .line 166
+    goto :goto_1
+
     .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v8, "NativeCrashListener"
+    :catch_4
+    move-exception v8
 
-    const-string v9, "Unable to init native debug socket!"
-
-    invoke-static {v8, v9, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 168
-    return-void
+    goto :goto_2
 
     .line 157
     .end local v2    # "e":Ljava/lang/Exception;
-    .restart local v3    # "peer":Ljava/net/InetSocketAddress;
-    .restart local v4    # "peerFd":Ljava/io/FileDescriptor;
-    .restart local v5    # "serverFd":Ljava/io/FileDescriptor;
-    .restart local v6    # "sockAddr":Ljava/net/InetUnixAddress;
-    :catch_4
+    :catch_5
     move-exception v9
 
     goto :goto_4
 
     .line 149
-    :catch_5
+    :catch_6
     move-exception v9
 
     goto :goto_3
-
-    .restart local v2    # "e":Ljava/lang/Exception;
-    :catch_6
-    move-exception v8
-
-    goto :goto_2
-
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_7
-    move-exception v8
-
-    goto :goto_1
 .end method

@@ -105,7 +105,7 @@
 
     const/16 v6, 0x2710
 
-    if-ge v5, v6, :cond_1
+    if-ge v5, v6, :cond_2
 
     .line 79
     const-string v5, ":"
@@ -187,7 +187,7 @@
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mInputMethodManager:Lcom/android/internal/view/IInputMethodManager;
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
     .line 102
     iget-object v5, p0, Lcom/android/server/wm/Session;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -214,15 +214,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 117
+    :cond_1
+    :goto_2
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 119
-    :goto_2
     return-void
 
     .line 82
     .end local v2    # "ident":J
-    :cond_1
+    :cond_2
     const-string v5, ":u"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -265,7 +266,7 @@
 
     .line 105
     .restart local v2    # "ident":J
-    :cond_2
+    :cond_3
     const/4 v5, 0x0
 
     :try_start_3
@@ -287,7 +288,7 @@
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mInputMethodManager:Lcom/android/internal/view/IInputMethodManager;
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_1
 
     .line 112
     iget-object v5, p0, Lcom/android/server/wm/Session;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -299,13 +300,15 @@
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_1
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 117
-    :cond_3
-    :goto_3
-    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    goto :goto_2
+
+    .line 114
+    :catch_1
+    move-exception v5
 
     goto :goto_2
 
+    .line 117
     .end local v1    # "e":Landroid/os/RemoteException;
     :catchall_1
     move-exception v5
@@ -313,13 +316,6 @@
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v5
-
-    .line 114
-    .restart local v1    # "e":Landroid/os/RemoteException;
-    :catch_1
-    move-exception v5
-
-    goto :goto_3
 .end method
 
 
@@ -689,10 +685,12 @@
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 429
     monitor-exit v3
 
     return v2
 
+    .line 431
     :catchall_0
     move-exception v2
 
@@ -746,10 +744,12 @@
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 443
     monitor-exit v3
 
     return v2
 
+    .line 445
     :catchall_0
     move-exception v2
 
@@ -1402,10 +1402,12 @@
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 244
     monitor-exit v3
 
     return v2
 
+    .line 248
     :catchall_0
     move-exception v2
 
@@ -1578,6 +1580,7 @@
     :try_start_2
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 352
     monitor-exit v5
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
@@ -1711,6 +1714,7 @@
     :try_start_6
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 368
     monitor-exit v5
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
@@ -1808,10 +1812,12 @@
     :try_start_2
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 459
     monitor-exit v10
 
     return-object v0
 
+    .line 463
     :catchall_0
     move-exception v0
 

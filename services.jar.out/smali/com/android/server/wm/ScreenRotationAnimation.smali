@@ -606,6 +606,7 @@
     .line 291
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
+    .line 290
     :cond_9
     throw v1
 .end method
@@ -1100,13 +1101,13 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 608
+    .end local v4    # "outer":Landroid/graphics/Rect;
+    .end local v5    # "inner":Landroid/graphics/Rect;
+    :goto_3
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     .line 615
-    .end local v4    # "outer":Landroid/graphics/Rect;
-    .end local v5    # "inner":Landroid/graphics/Rect;
     :cond_2
-    :goto_3
     if-eqz v9, :cond_3
 
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mEnteringBlackFrame:Lcom/android/server/wm/BlackFrame;
@@ -1170,13 +1171,13 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 630
+    .end local v4    # "outer":Landroid/graphics/Rect;
+    .end local v5    # "inner":Landroid/graphics/Rect;
+    :goto_4
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     .line 637
-    .end local v4    # "outer":Landroid/graphics/Rect;
-    .end local v5    # "inner":Landroid/graphics/Rect;
     :cond_3
-    :goto_4
     const/4 v2, 0x1
 
     goto/16 :goto_0
@@ -1358,11 +1359,9 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 608
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
-
     goto/16 :goto_3
 
+    .line 608
     .end local v11    # "e":Landroid/view/Surface$OutOfResourcesException;
     :catchall_0
     move-exception v2
@@ -1386,11 +1385,9 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 630
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
-
     goto/16 :goto_4
 
+    .line 630
     .end local v11    # "e":Landroid/view/Surface$OutOfResourcesException;
     :catchall_1
     move-exception v2

@@ -279,6 +279,7 @@
     .line 143
     invoke-virtual {p0}, Lcom/android/server/wm/BlackFrame;->kill()V
 
+    .line 142
     :cond_5
     throw v1
 .end method

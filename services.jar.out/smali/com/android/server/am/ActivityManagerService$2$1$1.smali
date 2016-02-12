@@ -118,17 +118,13 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 1500
     check-cast p1, Lcom/android/server/am/ProcessMemInfo;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/android/server/am/ProcessMemInfo;
 
-    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$2$1$1;->compare(Lcom/android/server/am/ProcessMemInfo;Lcom/android/server/am/ProcessMemInfo;)I
 
     move-result v0

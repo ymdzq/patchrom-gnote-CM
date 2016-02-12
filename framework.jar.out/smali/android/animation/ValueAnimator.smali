@@ -2222,7 +2222,6 @@
 
 .method public bridge synthetic setDuration(J)Landroid/animation/Animator;
     .locals 1
-    .param p1, "x0"    # J
 
     .prologue
     .line 49

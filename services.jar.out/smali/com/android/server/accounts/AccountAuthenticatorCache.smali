@@ -175,12 +175,12 @@
     const/4 v0, 0x0
 
     .line 79
+    :goto_0
     invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
 
-    :goto_0
+    .line 76
     return-object v0
 
-    .line 76
     :cond_0
     :try_start_1
     new-instance v0, Landroid/accounts/AuthenticatorDescription;
@@ -191,11 +191,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 79
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
-
     goto :goto_0
 
+    .line 79
     .end local v1    # "accountType":Ljava/lang/String;
     .end local v3    # "labelId":I
     .end local v4    # "iconId":I
@@ -212,9 +210,6 @@
 
 .method public bridge synthetic parseServiceAttributes(Landroid/content/res/Resources;Ljava/lang/String;Landroid/util/AttributeSet;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Landroid/content/res/Resources;
-    .param p2, "x1"    # Ljava/lang/String;
-    .param p3, "x2"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 44

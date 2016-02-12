@@ -323,9 +323,9 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_4
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_7
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_9
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_b
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_7
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 137
@@ -374,7 +374,7 @@
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_d
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 158
     .end local v0    # "e":Ljava/lang/IllegalStateException;
@@ -484,9 +484,9 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_4} :catch_4
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_7
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_9
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_4} :catch_b
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_5
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_6
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_4} :catch_7
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     goto :goto_1
@@ -544,13 +544,13 @@
     goto :goto_0
 
     .line 155
+    .end local v0    # "e":Ljava/lang/NullPointerException;
     :catch_3
     move-exception v7
 
     goto :goto_0
 
     .line 131
-    .end local v0    # "e":Ljava/lang/NullPointerException;
     .restart local v1    # "outerDepth":I
     .restart local v2    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v5    # "tagName":Ljava/lang/String;
@@ -589,9 +589,9 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_7 .. :try_end_7} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_7 .. :try_end_7} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_7} :catch_4
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_7 .. :try_end_7} :catch_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_9
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_7 .. :try_end_7} :catch_b
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_7 .. :try_end_7} :catch_5
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_7 .. :try_end_7} :catch_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     goto :goto_1
@@ -644,13 +644,7 @@
     :try_start_9
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_5
-
-    goto/16 :goto_0
-
-    .line 155
-    :catch_5
-    move-exception v7
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_3
 
     goto/16 :goto_0
 
@@ -675,13 +669,7 @@
     :try_start_a
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_6
-
-    goto/16 :goto_0
-
-    .line 155
-    :catch_6
-    move-exception v7
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
 
     goto/16 :goto_0
 
@@ -689,7 +677,7 @@
     .end local v1    # "outerDepth":I
     .end local v2    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v6    # "type":I
-    :catch_7
+    :catch_5
     move-exception v0
 
     .line 144
@@ -732,19 +720,13 @@
     :try_start_c
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_8
-
-    goto/16 :goto_0
-
-    .line 155
-    :catch_8
-    move-exception v7
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_3
 
     goto/16 :goto_0
 
     .line 145
     .end local v0    # "e":Lorg/xmlpull/v1/XmlPullParserException;
-    :catch_9
+    :catch_6
     move-exception v0
 
     .line 146
@@ -787,19 +769,13 @@
     :try_start_e
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_e
-    .catch Ljava/io/IOException; {:try_start_e .. :try_end_e} :catch_a
-
-    goto/16 :goto_0
-
-    .line 155
-    :catch_a
-    move-exception v7
+    .catch Ljava/io/IOException; {:try_start_e .. :try_end_e} :catch_3
 
     goto/16 :goto_0
 
     .line 147
     .end local v0    # "e":Ljava/io/IOException;
-    :catch_b
+    :catch_7
     move-exception v0
 
     .line 148
@@ -842,13 +818,7 @@
     :try_start_10
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_10
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_c
-
-    goto/16 :goto_0
-
-    .line 155
-    :catch_c
-    move-exception v7
+    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_3
 
     goto/16 :goto_0
 
@@ -869,21 +839,14 @@
     :try_start_11
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_11
-    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_11} :catch_e
+    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_11} :catch_8
 
-    .line 156
+    .line 150
     :goto_2
     throw v7
 
     .line 155
-    .local v0, "e":Ljava/lang/IllegalStateException;
-    :catch_d
-    move-exception v7
-
-    goto/16 :goto_0
-
-    .end local v0    # "e":Ljava/lang/IllegalStateException;
-    :catch_e
+    :catch_8
     move-exception v8
 
     goto :goto_2

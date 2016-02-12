@@ -896,8 +896,8 @@
 
     invoke-direct {v3, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 693
@@ -945,18 +945,18 @@
     :try_start_3
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_5
 
     .line 712
     :cond_2
     :goto_1
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_3
 
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
     move-result v7
 
-    if-nez v7, :cond_7
+    if-nez v7, :cond_3
 
     .line 713
     sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
@@ -985,41 +985,20 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    :cond_3
     move-object v4, v5
 
     .end local v5    # "dumpStream":Ljava/io/FileOutputStream;
     .restart local v4    # "dumpStream":Ljava/io/FileOutputStream;
     move-object v2, v3
 
+    .line 716
     .end local v3    # "dumpFile":Ljava/io/File;
     .restart local v2    # "dumpFile":Ljava/io/File;
     goto :goto_0
 
-    .line 708
-    .end local v2    # "dumpFile":Ljava/io/File;
-    .end local v4    # "dumpStream":Ljava/io/FileOutputStream;
-    .restart local v3    # "dumpFile":Ljava/io/File;
-    .restart local v5    # "dumpStream":Ljava/io/FileOutputStream;
-    :catch_0
-    move-exception v6
-
-    .line 709
-    .local v6, "e":Ljava/io/IOException;
-    sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
-
-    const-string v8, "failed to close dumpsys output stream"
-
-    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
     .line 699
-    .end local v3    # "dumpFile":Ljava/io/File;
-    .end local v5    # "dumpStream":Ljava/io/FileOutputStream;
-    .end local v6    # "e":Ljava/io/IOException;
-    .restart local v2    # "dumpFile":Ljava/io/File;
-    .restart local v4    # "dumpStream":Ljava/io/FileOutputStream;
-    :catch_1
+    :catch_0
     move-exception v6
 
     .line 700
@@ -1035,17 +1014,17 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 705
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     .line 707
     :try_start_5
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
     .line 712
     .end local v6    # "e":Landroid/os/RemoteException;
-    :cond_3
+    :cond_4
     :goto_3
     if-eqz v2, :cond_0
 
@@ -1080,33 +1059,18 @@
 
     move-result-object v8
 
+    :goto_4
     invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 
-    .line 708
-    .restart local v6    # "e":Landroid/os/RemoteException;
-    :catch_2
-    move-exception v6
-
-    .line 709
-    .local v6, "e":Ljava/io/IOException;
-    sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
-
-    const-string v8, "failed to close dumpsys output stream"
-
-    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_3
-
     .line 701
-    .end local v6    # "e":Ljava/io/IOException;
-    :catch_3
+    :catch_1
     move-exception v6
 
     .line 702
-    .restart local v6    # "e":Ljava/io/IOException;
-    :goto_4
+    .local v6, "e":Ljava/io/IOException;
+    :goto_5
     :try_start_6
     sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
 
@@ -1117,7 +1081,7 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 705
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     .line 707
     :try_start_7
@@ -1126,8 +1090,8 @@
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
 
     .line 712
-    :cond_4
-    :goto_5
+    :cond_5
+    :goto_6
     if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
@@ -1161,47 +1125,32 @@
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-
-    .line 708
-    :catch_4
-    move-exception v6
-
-    .line 709
-    sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
-
-    const-string v8, "failed to close dumpsys output stream"
-
-    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_5
+    goto :goto_4
 
     .line 705
     .end local v6    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v7
 
-    :goto_6
-    if-eqz v4, :cond_5
+    :goto_7
+    if-eqz v4, :cond_6
 
     .line 707
     :try_start_8
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_5
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
 
     .line 712
-    :cond_5
-    :goto_7
-    if-eqz v2, :cond_6
+    :cond_6
+    :goto_8
+    if-eqz v2, :cond_7
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
     move-result v8
 
-    if-nez v8, :cond_6
+    if-nez v8, :cond_7
 
     .line 713
     sget-object v8, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
@@ -1230,11 +1179,12 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
+    .line 705
+    :cond_7
     throw v7
 
     .line 708
-    :catch_5
+    :catch_2
     move-exception v6
 
     .line 709
@@ -1245,12 +1195,59 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_7
+    goto :goto_8
 
-    .line 705
+    .line 708
+    .local v6, "e":Landroid/os/RemoteException;
+    :catch_3
+    move-exception v6
+
+    .line 709
+    .local v6, "e":Ljava/io/IOException;
+    sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
+
+    const-string v8, "failed to close dumpsys output stream"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_3
+
+    .line 708
+    :catch_4
+    move-exception v6
+
+    .line 709
+    sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
+
+    const-string v8, "failed to close dumpsys output stream"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_6
+
+    .line 708
     .end local v2    # "dumpFile":Ljava/io/File;
+    .end local v4    # "dumpStream":Ljava/io/FileOutputStream;
     .end local v6    # "e":Ljava/io/IOException;
     .restart local v3    # "dumpFile":Ljava/io/File;
+    .restart local v5    # "dumpStream":Ljava/io/FileOutputStream;
+    :catch_5
+    move-exception v6
+
+    .line 709
+    .restart local v6    # "e":Ljava/io/IOException;
+    sget-object v7, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
+
+    const-string v8, "failed to close dumpsys output stream"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_1
+
+    .line 705
+    .end local v5    # "dumpStream":Ljava/io/FileOutputStream;
+    .end local v6    # "e":Ljava/io/IOException;
+    .restart local v4    # "dumpStream":Ljava/io/FileOutputStream;
     :catchall_1
     move-exception v7
 
@@ -1258,7 +1255,7 @@
 
     .end local v3    # "dumpFile":Ljava/io/File;
     .restart local v2    # "dumpFile":Ljava/io/File;
-    goto :goto_6
+    goto :goto_7
 
     .end local v2    # "dumpFile":Ljava/io/File;
     .end local v4    # "dumpStream":Ljava/io/FileOutputStream;
@@ -1275,7 +1272,7 @@
 
     .end local v3    # "dumpFile":Ljava/io/File;
     .restart local v2    # "dumpFile":Ljava/io/File;
-    goto :goto_6
+    goto :goto_7
 
     .line 701
     .end local v2    # "dumpFile":Ljava/io/File;
@@ -1287,7 +1284,7 @@
 
     .end local v3    # "dumpFile":Ljava/io/File;
     .restart local v2    # "dumpFile":Ljava/io/File;
-    goto :goto_4
+    goto/16 :goto_5
 
     .end local v2    # "dumpFile":Ljava/io/File;
     .end local v4    # "dumpStream":Ljava/io/FileOutputStream;
@@ -1304,7 +1301,7 @@
 
     .end local v3    # "dumpFile":Ljava/io/File;
     .restart local v2    # "dumpFile":Ljava/io/File;
-    goto :goto_4
+    goto/16 :goto_5
 
     .line 699
     .end local v2    # "dumpFile":Ljava/io/File;
@@ -1334,21 +1331,6 @@
     .end local v3    # "dumpFile":Ljava/io/File;
     .restart local v2    # "dumpFile":Ljava/io/File;
     goto/16 :goto_2
-
-    .end local v2    # "dumpFile":Ljava/io/File;
-    .end local v4    # "dumpStream":Ljava/io/FileOutputStream;
-    .restart local v3    # "dumpFile":Ljava/io/File;
-    .restart local v5    # "dumpStream":Ljava/io/FileOutputStream;
-    :cond_7
-    move-object v4, v5
-
-    .end local v5    # "dumpStream":Ljava/io/FileOutputStream;
-    .restart local v4    # "dumpStream":Ljava/io/FileOutputStream;
-    move-object v2, v3
-
-    .end local v3    # "dumpFile":Ljava/io/File;
-    .restart local v2    # "dumpFile":Ljava/io/File;
-    goto/16 :goto_0
 .end method
 
 .method private logOutlierLocked(J)V

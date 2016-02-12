@@ -383,6 +383,7 @@
     if-eq v0, v1, :cond_0
 
     .line 237
+    :goto_1
     invoke-virtual {v9}, Landroid/view/DragEvent;->recycle()V
 
     goto :goto_0
@@ -429,12 +430,8 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 237
-    invoke-virtual {v9}, Landroid/view/DragEvent;->recycle()V
+    goto :goto_1
 
-    goto :goto_0
-
-    .line 236
     .end local v8    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
@@ -452,6 +449,7 @@
     .line 237
     invoke-virtual {v9}, Landroid/view/DragEvent;->recycle()V
 
+    .line 236
     :cond_2
     throw v0
 .end method
@@ -900,6 +898,7 @@
     .line 386
     invoke-virtual {v9}, Landroid/view/DragEvent;->recycle()V
 
+    .line 385
     :cond_3
     throw v1
 .end method

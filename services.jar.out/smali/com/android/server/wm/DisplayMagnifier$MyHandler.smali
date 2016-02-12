@@ -80,19 +80,11 @@
 
     invoke-interface {v7, v2}, Landroid/view/IMagnificationCallbacks;->onMagnifedBoundsChanged(Landroid/graphics/Region;)V
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 713
-    invoke-virtual {v2}, Landroid/graphics/Region;->recycle()V
-
-    goto :goto_0
-
-    .line 710
-    :catch_0
-    move-exception v7
-
-    .line 713
+    :goto_1
     invoke-virtual {v2}, Landroid/graphics/Region;->recycle()V
 
     goto :goto_0
@@ -139,19 +131,11 @@
 
     invoke-interface {v7, v3, v6, v4, v1}, Landroid/view/IMagnificationCallbacks;->onRectangleOnScreenRequested(IIII)V
     :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 727
-    invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
-
-    goto :goto_0
-
-    .line 724
-    :catch_1
-    move-exception v7
-
-    .line 727
+    :goto_2
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto :goto_0
@@ -180,12 +164,12 @@
 
     invoke-interface {v7}, Landroid/view/IMagnificationCallbacks;->onUserContextChanged()V
     :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_0
 
     .line 733
-    :catch_2
+    :catch_0
     move-exception v7
 
     goto :goto_0
@@ -206,12 +190,12 @@
 
     invoke-interface {v7, v5}, Landroid/view/IMagnificationCallbacks;->onRotationChanged(I)V
     :try_end_3
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_1
 
     goto :goto_0
 
     .line 741
-    :catch_3
+    :catch_1
     move-exception v7
 
     goto :goto_0
@@ -273,7 +257,7 @@
     :cond_0
     monitor-exit v8
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catchall_2
     move-exception v7
@@ -284,9 +268,30 @@
 
     throw v7
 
-    .line 705
-    nop
+    .line 724
+    .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
+    .restart local v1    # "bottom":I
+    .restart local v3    # "left":I
+    .restart local v4    # "right":I
+    .restart local v6    # "top":I
+    :catch_2
+    move-exception v7
 
+    goto :goto_2
+
+    .line 710
+    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
+    .end local v1    # "bottom":I
+    .end local v3    # "left":I
+    .end local v4    # "right":I
+    .end local v6    # "top":I
+    .restart local v2    # "bounds":Landroid/graphics/Region;
+    :catch_3
+    move-exception v7
+
+    goto :goto_1
+
+    .line 705
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

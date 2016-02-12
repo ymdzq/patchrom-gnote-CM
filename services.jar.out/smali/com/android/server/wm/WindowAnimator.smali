@@ -219,7 +219,7 @@
 
     .local v11, "i":I
     :goto_1
-    if-ge v11, v13, :cond_7
+    if-ge v11, v13, :cond_8
 
     .line 479
     move-object/from16 v0, p0
@@ -325,7 +325,7 @@
 
     .local v12, "j":I
     :goto_3
-    if-ge v12, v3, :cond_6
+    if-ge v12, v3, :cond_7
 
     .line 502
     move-object/from16 v0, v17
@@ -410,11 +410,12 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 537
+    .end local v9    # "e":Ljava/lang/RuntimeException;
+    :cond_4
+    :goto_4
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     .line 542
-    .end local v9    # "e":Ljava/lang/RuntimeException;
-    :goto_4
     const/4 v10, 0x0
 
     .line 543
@@ -482,7 +483,7 @@
     .local v14, "pendingChanges":I
     and-int/lit8 v18, v14, 0x4
 
-    if-eqz v18, :cond_4
+    if-eqz v18, :cond_5
 
     .line 548
     move-object/from16 v0, p0
@@ -500,14 +501,14 @@
     iput v0, v1, Lcom/android/server/wm/WindowAnimator;->mBulkUpdateParams:I
 
     .line 550
-    :cond_4
-    if-eqz v14, :cond_5
+    :cond_5
+    if-eqz v14, :cond_6
 
     .line 551
     const/4 v10, 0x1
 
     .line 544
-    :cond_5
+    :cond_6
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_5
@@ -524,7 +525,7 @@
     .restart local v12    # "j":I
     .restart local v15    # "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
     .restart local v17    # "windows":Lcom/android/server/wm/WindowList;
-    :cond_6
+    :cond_7
     add-int/lit8 v11, v11, 0x1
 
     goto/16 :goto_1
@@ -536,11 +537,11 @@
     .end local v12    # "j":I
     .end local v15    # "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
     .end local v17    # "windows":Lcom/android/server/wm/WindowList;
-    :cond_7
+    :cond_8
     const/4 v11, 0x0
 
     :goto_6
-    if-ge v11, v13, :cond_a
+    if-ge v11, v13, :cond_b
 
     .line 507
     :try_start_2
@@ -583,13 +584,13 @@
 
     .line 513
     .restart local v15    # "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
-    if-eqz v15, :cond_8
+    if-eqz v15, :cond_9
 
     .line 514
     invoke-virtual {v15}, Lcom/android/server/wm/ScreenRotationAnimation;->updateSurfacesInTransaction()V
 
     .line 517
-    :cond_8
+    :cond_9
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/wm/WindowAnimator;->mAnimating:Z
@@ -633,9 +634,9 @@
 
     move-object/from16 v18, v0
 
-    if-eqz v18, :cond_9
+    if-eqz v18, :cond_a
 
-    if-nez v6, :cond_9
+    if-nez v6, :cond_a
 
     .line 521
     move-object/from16 v0, p0
@@ -653,7 +654,7 @@
     invoke-virtual/range {v18 .. v18}, Lcom/android/server/wm/DisplayMagnifier;->drawMagnifiedRegionBorderIfNeededLocked()V
 
     .line 506
-    :cond_9
+    :cond_a
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_6
@@ -661,14 +662,14 @@
     .line 525
     .end local v6    # "displayId":I
     .end local v15    # "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
-    :cond_a
+    :cond_b
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/wm/WindowAnimator;->mAnimating:Z
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_b
+    if-eqz v18, :cond_c
 
     .line 526
     move-object/from16 v0, p0
@@ -680,7 +681,7 @@
     invoke-virtual/range {v18 .. v18}, Lcom/android/server/wm/WindowManagerService;->scheduleAnimationLocked()V
 
     .line 529
-    :cond_b
+    :cond_c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -702,7 +703,7 @@
 
     move-object/from16 v18, v0
 
-    if-eqz v18, :cond_c
+    if-eqz v18, :cond_4
 
     .line 532
     move-object/from16 v0, p0
@@ -722,12 +723,9 @@
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 537
-    :cond_c
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
-
     goto/16 :goto_4
 
+    .line 537
     .end local v11    # "i":I
     .end local v13    # "numDisplays":I
     :catchall_0

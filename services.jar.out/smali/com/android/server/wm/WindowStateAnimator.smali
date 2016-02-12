@@ -5649,6 +5649,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1373
+    :goto_1
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     goto :goto_0
@@ -5712,11 +5713,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    goto :goto_1
+
     .line 1373
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
-
-    goto :goto_0
-
     .end local v0    # "e":Ljava/lang/RuntimeException;
     :catchall_0
     move-exception v3

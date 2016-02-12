@@ -121,7 +121,6 @@
 # virtual methods
 .method public bridge synthetic addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # Landroid/transition/Transition$TransitionListener;
 
     .prologue
     .line 50
@@ -149,7 +148,6 @@
 
 .method public bridge synthetic addTarget(I)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # I
 
     .prologue
     .line 50
@@ -162,7 +160,6 @@
 
 .method public bridge synthetic addTarget(Landroid/view/View;)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # Landroid/view/View;
 
     .prologue
     .line 50
@@ -614,7 +611,6 @@
 
 .method public bridge synthetic removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # Landroid/transition/Transition$TransitionListener;
 
     .prologue
     .line 50
@@ -642,7 +638,6 @@
 
 .method public bridge synthetic removeTarget(I)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # I
 
     .prologue
     .line 50
@@ -655,7 +650,6 @@
 
 .method public bridge synthetic removeTarget(Landroid/view/View;)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # Landroid/view/View;
 
     .prologue
     .line 50
@@ -919,7 +913,6 @@
 
 .method public bridge synthetic setDuration(J)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # J
 
     .prologue
     .line 50
@@ -987,7 +980,6 @@
 
 .method public bridge synthetic setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # Landroid/animation/TimeInterpolator;
 
     .prologue
     .line 50
@@ -1074,7 +1066,6 @@
 
 .method bridge synthetic setSceneRoot(Landroid/view/ViewGroup;)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 50
@@ -1131,7 +1122,6 @@
 
 .method public bridge synthetic setStartDelay(J)Landroid/transition/Transition;
     .locals 1
-    .param p1, "x0"    # J
 
     .prologue
     .line 50
