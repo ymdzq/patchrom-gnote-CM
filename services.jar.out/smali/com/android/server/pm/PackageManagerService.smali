@@ -21298,7 +21298,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_miui
+    if-eqz v1, :cond_miui_0
 
     invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -21310,7 +21310,7 @@
 
     if-eqz v1, :cond_1
 
-    :cond_miui
+    :cond_miui_0
     :goto_2
     add-int/lit8 v10, v10, 0x1
 

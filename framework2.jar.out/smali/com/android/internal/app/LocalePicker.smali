@@ -435,7 +435,19 @@
     .restart local v12    # "finalSize":I
     new-instance v2, Lcom/android/internal/app/LocalePicker$LocaleInfo;
 
-    invoke-direct {v2, v11, v15}, Lcom/android/internal/app/LocalePicker$LocaleInfo;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v25
+
+    invoke-static {v15, v0, v1, v11}, Lcom/android/internal/app/LocalePickerInjector;->getDisplayLanguage(Ljava/util/Locale;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/internal/app/LocalePicker;->toTitleCase(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3, v15}, Lcom/android/internal/app/LocalePicker$LocaleInfo;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
     aput-object v2, v21, v13
 
@@ -501,11 +513,9 @@
     goto :goto_3
 
     :cond_6
-    new-instance v2, Landroid/miui/LocaleComparator;
+    move-object/from16 v0, p0
 
-    invoke-direct {v2}, Landroid/miui/LocaleComparator;-><init>()V
-
-    invoke-static {v6, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+    invoke-static {v6, v0}, Lcom/android/internal/app/LocalePickerInjector;->sortLocaleInfos([Lcom/android/internal/app/LocalePicker$LocaleInfo;Landroid/content/Context;)V
 
     const-string v2, "layout_inflater"
 
